@@ -23,6 +23,7 @@ export function ContactQuestion() {
       newErrors.email = 'Invalid email';
     }
     if (!surveyData.whatsapp.trim()) newErrors.whatsapp = 'Required';
+    if (!surveyData.billingAddress.trim()) newErrors.billingAddress = 'Required';
     if (!agreed) newErrors.agreed = 'You must agree to continue';
 
     setErrors(newErrors);
@@ -112,6 +113,19 @@ export function ContactQuestion() {
           />
           <p className="text-sm text-muted-foreground mt-1">We'll contact you on WhatsApp for faster communication</p>
           {errors.whatsapp && <p className="text-destructive text-sm mt-1">{errors.whatsapp}</p>}
+        </div>
+
+        <div>
+          <Label htmlFor="billingAddress" className="text-foreground">Business / Billing Address *</Label>
+          <Input
+            id="billingAddress"
+            placeholder="e.g., 123 Main Rd, Sandton, Gauteng"
+            value={surveyData.billingAddress}
+            onChange={(e) => updateSurveyData('billingAddress', e.target.value)}
+            className={`h-12 mt-1 ${errors.billingAddress ? 'border-destructive' : ''}`}
+          />
+          <p className="text-sm text-muted-foreground mt-1">We need this for your invoice</p>
+          {errors.billingAddress && <p className="text-destructive text-sm mt-1">{errors.billingAddress}</p>}
         </div>
 
         <div>

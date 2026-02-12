@@ -26,6 +26,7 @@ export function SuccessPage() {
         email: surveyData.email || null,
         whatsapp: surveyData.whatsapp || null,
         website_url: surveyData.websiteUrl || null,
+        billing_address: surveyData.billingAddress || null,
         google_reviews_interest: surveyData.googleReviewsInterest === 'yes',
         is_disqualified: false,
       });
@@ -41,6 +42,7 @@ I just completed my application for the R5,000 bespoke website offer.
 
 Name: ${surveyData.fullName}
 Business: ${surveyData.businessName}
+Billing Address: ${surveyData.billingAddress}
 Industry: ${surveyData.industry}
 Location: ${surveyData.province}
 Current website: ${surveyData.websiteUrl || 'None'}
@@ -71,10 +73,10 @@ ${emailBody}`;
 
   const steps = [
     "Within 24 hours, our designer will reach out via WhatsApp.",
-    "You'll receive a PDF with example websites in your industry.",
-    "Pay 50% deposit (R2,500) to start your project.",
-    "Your design mockup ready within 3-5 business days.",
-    "After approval and final payment, website launches within 7 days!",
+    "Our designer will chat with you to understand your design preferences, style, and exactly what you need.",
+    "You'll receive an invoice for your 50% deposit (R2,500) to kick things off.",
+    "Once payment is confirmed, your design mockup will be ready within 3-5 business days.",
+    "After approval and final payment, your website launches within 7 days!",
   ];
 
   return (
@@ -161,27 +163,41 @@ ${emailBody}`;
             </div>
           </div>
 
-          {/* Copy Email Box */}
-          <div className="relative bg-muted/50 rounded-xl p-4">
-            <button
+          {/* Copy Email Instructions */}
+          <div className="card-premium">
+            <h2 className="font-semibold text-foreground text-lg mb-2 flex items-center gap-2">
+              ✉️ NEXT STEP: SEND US YOUR APPLICATION
+            </h2>
+            <p className="text-muted-foreground text-sm mb-4">
+              👇 <strong>Copy the email below</strong> and paste it into a new email to <span className="text-accent font-semibold">designer@agency.co.za</span> — this confirms your spot and gets the ball rolling!
+            </p>
+            <div className="relative bg-muted/50 rounded-xl p-4">
+              <button
+                onClick={handleCopy}
+                className="absolute top-3 right-3 flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {copied ? (
+                  <>
+                    <Check className="w-4 h-4 text-success" />
+                    <span className="text-success">Copied!</span>
+                  </>
+                ) : (
+                  <>
+                    <Copy className="w-4 h-4" />
+                    <span>Copy</span>
+                  </>
+                )}
+              </button>
+              <pre className="text-sm text-foreground whitespace-pre-wrap font-sans pr-16">
+                {emailText}
+              </pre>
+            </div>
+            <Button
               onClick={handleCopy}
-              className="absolute top-3 right-3 flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="w-full mt-4 h-12 bg-accent text-accent-foreground hover:bg-accent/90 font-bold text-base"
             >
-              {copied ? (
-                <>
-                  <Check className="w-4 h-4 text-success" />
-                  <span className="text-success">Copied!</span>
-                </>
-              ) : (
-                <>
-                  <Copy className="w-4 h-4" />
-                  <span>Copy</span>
-                </>
-              )}
-            </button>
-            <pre className="text-sm text-foreground whitespace-pre-wrap font-sans pr-16">
-              {emailText}
-            </pre>
+              {copied ? '✅ Copied! Now paste it in your email' : '📋 COPY EMAIL TO CLIPBOARD'}
+            </Button>
           </div>
 
           {/* What Happens Next */}
