@@ -56,8 +56,30 @@ export function HeroSection() {
           <span className="text-muted-foreground line-through text-xl">R20,000</span>
           <ArrowDown className="w-5 h-5 mx-auto my-2 text-muted-foreground" />
           <span className="block text-accent text-4xl font-bold font-serif">R5,000 once-off</span>
-          <p className="text-sm text-muted-foreground mt-2">
-            (That's less than one month's rent for a 24/7 online presence)
+        </motion.div>
+
+        {/* Price Justification */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.25 }}
+          className="card-premium text-left mb-8 space-y-3"
+        >
+          <p className="text-foreground font-semibold text-sm">Think about what R5,000 really costs you:</p>
+          <p className="text-muted-foreground text-sm">
+            If your business makes R50,000/month, that's <span className="text-foreground font-semibold">3 DAYS</span> of revenue.
+          </p>
+          <p className="text-muted-foreground text-sm">
+            For a website that could bring you customers for the next <span className="text-foreground font-semibold">5–10 years</span>.
+          </p>
+          <p className="text-foreground font-semibold text-sm mt-2">Compare that to hiring:</p>
+          <ul className="text-sm text-muted-foreground space-y-1 pl-4">
+            <li>• Junior developer: <span className="text-foreground">R180,000/year</span></li>
+            <li>• Agency project: <span className="text-foreground">R25,000–R50,000</span></li>
+            <li>• DIY + your time: <span className="text-foreground">Priceless</span> <span className="italic">(and it'll still look amateur)</span></li>
+          </ul>
+          <p className="text-accent font-bold text-sm pt-2 border-t border-border">
+            R5,000 once-off isn't an expense. It's the cheapest marketing asset you'll ever own.
           </p>
         </motion.div>
 
