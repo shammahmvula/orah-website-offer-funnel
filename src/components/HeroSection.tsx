@@ -76,7 +76,16 @@ export function HeroSection() {
           <ul className="text-sm text-muted-foreground space-y-1 pl-4">
             <li>• Junior developer: <span className="text-foreground">R180,000/year</span></li>
             <li>• Agency project: <span className="text-foreground">R25,000–R50,000</span></li>
-            <li>• DIY + your time: <span className="text-foreground">Priceless</span> <span className="italic">(and it'll still look amateur)</span></li>
+            <li className="space-y-1">
+              <span>• DIY + your time:</span>
+              <ul className="pl-4 text-muted-foreground space-y-0.5 mt-1">
+                <li>→ 47 hours watching YouTube tutorials</li>
+                <li>→ 3 weeks choosing between Wix, WordPress, Squarespace & Shopify</li>
+                <li>→ R800/year for a page builder you'll cancel</li>
+                <li>→ 6 months of <span className="italic">"I'll finish it this weekend"</span></li>
+              </ul>
+              <p className="text-foreground font-semibold mt-1">And after ALL that? Your customers can still tell you made it yourself.</p>
+            </li>
           </ul>
           <p className="text-accent font-bold text-sm pt-2 border-t border-border">
             R5,000 once-off isn't an expense. It's the cheapest marketing asset you'll ever own.
