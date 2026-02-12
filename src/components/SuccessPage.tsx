@@ -224,7 +224,7 @@ ${emailBody}`;
               <div>
                 <p className="font-semibold text-foreground mb-1">💰 OUR GUARANTEE</p>
                 <p className="text-sm text-foreground">
-                  Not 100% satisfied with your design mockup? We'll revise until you love it - or refund your deposit. No questions asked.
+                  Not 100% satisfied with your design mockup? We'll revise until you love it. Your satisfaction is our priority.
                 </p>
               </div>
             </div>
