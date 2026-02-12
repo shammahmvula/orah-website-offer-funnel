@@ -80,7 +80,7 @@ export function HeroSection() {
               <span>• DIY + your time <span className="italic">(well let's see... so that's)</span>:</span>
               <ul className="pl-4 text-muted-foreground space-y-0.5 mt-1">
                 <li>→ 47 hours watching YouTube tutorials</li>
-                <li>→ 3 weeks choosing between Wix, WordPress, Squarespace & Shopify</li>
+                <li>→ 3 weeks choosing between Wix, WordPress & Squarespace</li>
                 <li>→ R800/year for a page builder you'll cancel</li>
                 <li>→ 6 months of <span className="italic">"I'll finish it this weekend"</span></li>
               </ul>
