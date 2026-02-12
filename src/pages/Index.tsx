@@ -3,9 +3,9 @@ import { HeroSection } from '@/components/HeroSection';
 import { Survey } from '@/components/Survey';
 import { DisqualifiedPage } from '@/components/DisqualifiedPage';
 import { SuccessPage } from '@/components/SuccessPage';
-import { SurveyProvider, useSurvey } from '@/contexts/SurveyContext';
+import { useSurvey } from '@/contexts/SurveyContext';
 
-function IndexContent() {
+const Index = () => {
   const { showSurvey, isDisqualified, isCompleted } = useSurvey();
 
   if (isCompleted) {
@@ -30,14 +30,6 @@ function IndexContent() {
       <FomoTicker />
       <HeroSection />
     </>
-  );
-}
-
-const Index = () => {
-  return (
-    <SurveyProvider>
-      <IndexContent />
-    </SurveyProvider>
   );
 };
 
