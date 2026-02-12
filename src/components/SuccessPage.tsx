@@ -54,7 +54,7 @@ Looking forward to hearing from you!
 ${surveyData.fullName}
 ${surveyData.whatsapp}`;
 
-  const emailText = `To: designer@agency.co.za
+  const emailText = `To: growth@getorah.co.za
 Subject: Website Application - ${surveyData.businessName}
 
 ${emailBody}`;
@@ -69,7 +69,7 @@ ${emailBody}`;
     `Hi! I just qualified for the R5,000 website offer. My business is ${surveyData.businessName} in ${surveyData.industry}. ${wantsReviews ? "I'm also interested in the free Google Reviews offer! " : ""}Looking forward to discussing!`
   );
 
-  const mailtoLink = `mailto:designer@agency.co.za?subject=${encodeURIComponent(`Website Application - ${surveyData.businessName}`)}&body=${encodeURIComponent(emailBody)}`;
+  const mailtoLink = `mailto:growth@getorah.co.za?subject=${encodeURIComponent(`Website Application - ${surveyData.businessName}`)}&body=${encodeURIComponent(emailBody)}`;
 
   const steps = [
     "Within 24 hours, our designer will reach out via WhatsApp.",
@@ -169,7 +169,7 @@ ${emailBody}`;
               ✉️ NEXT STEP: SEND US YOUR APPLICATION
             </h2>
             <p className="text-muted-foreground text-sm mb-4">
-              👇 <strong>Copy the email below</strong> and paste it into a new email to <span className="text-accent font-semibold">designer@agency.co.za</span> — this confirms your spot and gets the ball rolling!
+              👇 <strong>Copy the email below</strong> and paste it into a new email to <span className="text-accent font-semibold">growth@getorah.co.za</span> — this confirms your spot and gets the ball rolling!
             </p>
             <div className="relative bg-muted/50 rounded-xl p-4">
               <button
