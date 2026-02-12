@@ -25,8 +25,6 @@ export function MotivationQuestion() {
   return (
     <QuestionCard
       question="In one sentence, why do you want a new website?"
-      showBack
-      onBack={() => setCurrentQuestion(6)}
     >
       <Textarea
         value={surveyData.motivation}
@@ -50,19 +48,18 @@ export function MotivationQuestion() {
         </p>
       </div>
 
-      <div className="mt-6 space-y-3">
+      <div className="mt-6">
         <Button
-          onClick={() => setCurrentQuestion(8)}
-          className="w-full h-12 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
+          onClick={() => {
+            if (surveyData.motivation.trim().length > 0) {
+              setCurrentQuestion(8);
+            }
+          }}
+          disabled={!surveyData.motivation.trim()}
+          className="w-full h-12 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold disabled:opacity-50"
         >
           Continue →
         </Button>
-        <button
-          onClick={() => setCurrentQuestion(8)}
-          className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          Skip this question
-        </button>
       </div>
     </QuestionCard>
   );

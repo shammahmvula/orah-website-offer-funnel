@@ -40,8 +40,6 @@ export function ContactQuestion() {
   return (
     <QuestionCard
       question="🎉 Great news! Based on your answers, you're a strong candidate for our R5,000 offer."
-      showBack
-      onBack={() => setCurrentQuestion(7)}
     >
       {/* Google Reviews Offer */}
       <div className="bg-accent/10 border border-accent/30 rounded-xl p-4 mb-6">

@@ -22,8 +22,6 @@ export function RevenueQuestion() {
   return (
     <QuestionCard
       question="Roughly, what does your business generate per month?"
-      showBack
-      onBack={() => setCurrentQuestion(2)}
     >
       <div className="space-y-3">
         {options.map((option) => (
