@@ -16,11 +16,15 @@ const options = [
 ];
 
 export function IndustryQuestion() {
-  const { updateSurveyData, setCurrentQuestion } = useSurvey();
+  const { updateSurveyData, setCurrentQuestion, setIsDisqualified } = useSurvey();
 
   const handleSelect = (option: string) => {
     updateSurveyData('industry', option);
-    setTimeout(() => setCurrentQuestion(5), 300);
+    if (option.includes("E-commerce")) {
+      setIsDisqualified(true);
+    } else {
+      setTimeout(() => setCurrentQuestion(5), 300);
+    }
   };
 
   return (

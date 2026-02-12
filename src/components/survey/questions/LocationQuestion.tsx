@@ -6,10 +6,10 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 
 const options = [
-  "🇿🇦 Gauteng (Joburg, Pretoria, etc.)",
-  "🇿🇦 Western Cape (Cape Town, etc.)",
-  "🇿🇦 KwaZulu-Natal (Durban, etc.)",
-  "🇿🇦 Other South African Province",
+  "Gauteng (Joburg, Pretoria, etc.)",
+  "Western Cape (Cape Town, etc.)",
+  "KwaZulu-Natal (Durban, etc.)",
+  "Other South African Province",
   "❌ I'm not based in South Africa",
 ];
 

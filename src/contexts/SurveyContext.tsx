@@ -7,14 +7,13 @@ export interface SurveyData {
   industry: string;
   websiteSituation: string;
   investmentReady: string;
-  stylePreference: string;
-  features: string[];
   motivation: string;
   fullName: string;
   businessName: string;
   email: string;
   whatsapp: string;
   websiteUrl: string;
+  googleReviewsInterest: string;
 }
 
 interface SurveyContextType {
@@ -37,14 +36,13 @@ const defaultSurveyData: SurveyData = {
   industry: '',
   websiteSituation: '',
   investmentReady: '',
-  stylePreference: '',
-  features: ['📱 Mobile-friendly design'],
   motivation: '',
   fullName: '',
   businessName: '',
   email: '',
   whatsapp: '',
   websiteUrl: '',
+  googleReviewsInterest: '',
 };
 
 const SurveyContext = createContext<SurveyContextType | undefined>(undefined);

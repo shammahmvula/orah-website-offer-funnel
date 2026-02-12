@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 export function ContactQuestion() {
   const { surveyData, updateSurveyData, setCurrentQuestion, setIsCompleted } = useSurvey();
   const [agreed, setAgreed] = useState(false);
+  const [googleReviews, setGoogleReviews] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validateForm = () => {
@@ -30,6 +31,7 @@ export function ContactQuestion() {
 
   const handleSubmit = () => {
     if (validateForm()) {
+      updateSurveyData('googleReviewsInterest', googleReviews ? 'yes' : 'no');
       setIsCompleted(true);
     }
   };
@@ -38,8 +40,24 @@ export function ContactQuestion() {
     <QuestionCard
       question="🎉 Great news! Based on your answers, you're a strong candidate for our R5,000 offer."
       showBack
-      onBack={() => setCurrentQuestion(9)}
+      onBack={() => setCurrentQuestion(7)}
     >
+      {/* Google Reviews Offer */}
+      <div className="bg-accent/10 border border-accent/30 rounded-xl p-4 mb-6">
+        <p className="text-foreground font-semibold mb-2">⭐ BONUS OFFER</p>
+        <p className="text-sm text-foreground mb-3">
+          Would you also like us to help you generate more 5-star Google reviews as well, <span className="font-semibold text-accent">on the house for one month?</span>
+        </p>
+        <label className="flex items-center gap-3 cursor-pointer">
+          <Checkbox
+            checked={googleReviews}
+            onCheckedChange={(checked) => setGoogleReviews(checked as boolean)}
+            className="data-[state=checked]:bg-accent data-[state=checked]:border-accent"
+          />
+          <span className="text-sm text-foreground font-medium">Yes, I'd love free Google Reviews help! 🙌</span>
+        </label>
+      </div>
+
       <p className="text-muted-foreground mb-6">
         Final step: Let's get your details so our designer can reach out via WhatsApp.
       </p>
