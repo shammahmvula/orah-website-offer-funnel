@@ -16,6 +16,7 @@ export type Database = {
     Tables: {
       survey_responses: {
         Row: {
+          billing_address: string | null
           business_age: string | null
           business_name: string | null
           created_at: string
@@ -35,6 +36,7 @@ export type Database = {
           whatsapp: string | null
         }
         Insert: {
+          billing_address?: string | null
           business_age?: string | null
           business_name?: string | null
           created_at?: string
@@ -54,6 +56,7 @@ export type Database = {
           whatsapp?: string | null
         }
         Update: {
+          billing_address?: string | null
           business_age?: string | null
           business_name?: string | null
           created_at?: string

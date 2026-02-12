@@ -13,6 +13,7 @@ export interface SurveyData {
   email: string;
   whatsapp: string;
   websiteUrl: string;
+  billingAddress: string;
   googleReviewsInterest: string;
 }
 
@@ -42,6 +43,7 @@ const defaultSurveyData: SurveyData = {
   email: '',
   whatsapp: '',
   websiteUrl: '',
+  billingAddress: '',
   googleReviewsInterest: '',
 };
 
