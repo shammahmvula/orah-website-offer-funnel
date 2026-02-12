@@ -77,7 +77,7 @@ export function HeroSection() {
             <li>• Junior developer: <span className="text-foreground">R180,000/year</span></li>
             <li>• Agency project: <span className="text-foreground">R25,000–R50,000</span></li>
             <li className="space-y-1">
-              <span>• DIY + your time:</span>
+              <span>• DIY + your time <span className="italic">(well let's see... so that's)</span>:</span>
               <ul className="pl-4 text-muted-foreground space-y-0.5 mt-1">
                 <li>→ 47 hours watching YouTube tutorials</li>
                 <li>→ 3 weeks choosing between Wix, WordPress, Squarespace & Shopify</li>
