@@ -26,7 +26,7 @@ export function MotivationQuestion() {
     <QuestionCard
       question="In one sentence, why do you want a new website?"
       showBack
-      onBack={() => setCurrentQuestion(8)}
+      onBack={() => setCurrentQuestion(6)}
     >
       <Textarea
         value={surveyData.motivation}
@@ -52,13 +52,13 @@ export function MotivationQuestion() {
 
       <div className="mt-6 space-y-3">
         <Button
-          onClick={() => setCurrentQuestion(10)}
+          onClick={() => setCurrentQuestion(8)}
           className="w-full h-12 bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
         >
           Continue →
         </Button>
         <button
-          onClick={() => setCurrentQuestion(10)}
+          onClick={() => setCurrentQuestion(8)}
           className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors"
         >
           Skip this question

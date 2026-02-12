@@ -6,8 +6,7 @@ import { useSurvey } from '@/contexts/SurveyContext';
 
 const options = [
   { label: "✅ Yes, I'm ready to invest R5,000 now", toast: "Perfect! You're exactly who we love working with." },
-  { label: "🤔 I need to check my budget first", toast: "No problem - but spots are filling fast!" },
-  { label: "❌ No, that's not in my budget right now", toast: null },
+  { label: "❌ No, I'm just a tyre kicker — not willing to invest in my own business", toast: null },
 ];
 
 export function InvestmentQuestion() {
@@ -18,7 +17,7 @@ export function InvestmentQuestion() {
   const handleSelect = (option: typeof options[0]) => {
     updateSurveyData('investmentReady', option.label);
 
-    if (option.label.includes("No, that's not")) {
+    if (option.label.includes("tyre kicker")) {
       setIsDisqualified(true);
     } else {
       if (option.toast) {

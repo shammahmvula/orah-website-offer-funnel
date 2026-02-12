@@ -1,13 +1,39 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Copy, Check, Mail, MessageCircle, Shield } from 'lucide-react';
+import { Copy, Check, Mail, MessageCircle, Shield, Star } from 'lucide-react';
 import { useSurvey } from '@/contexts/SurveyContext';
 import { Button } from '@/components/ui/button';
 import { FomoTicker } from './FomoTicker';
+import { supabase } from '@/integrations/supabase/client';
 
 export function SuccessPage() {
   const { surveyData } = useSurvey();
   const [copied, setCopied] = useState(false);
+
+  // Save completed survey to database
+  useEffect(() => {
+    const saveResponse = async () => {
+      await supabase.from('survey_responses').insert({
+        province: surveyData.province || null,
+        business_age: surveyData.businessAge || null,
+        monthly_revenue: surveyData.monthlyRevenue || null,
+        industry: surveyData.industry || null,
+        website_situation: surveyData.websiteSituation || null,
+        investment_ready: surveyData.investmentReady || null,
+        motivation: surveyData.motivation || null,
+        full_name: surveyData.fullName || null,
+        business_name: surveyData.businessName || null,
+        email: surveyData.email || null,
+        whatsapp: surveyData.whatsapp || null,
+        website_url: surveyData.websiteUrl || null,
+        google_reviews_interest: surveyData.googleReviewsInterest === 'yes',
+        is_disqualified: false,
+      });
+    };
+    saveResponse();
+  }, []);
+
+  const wantsReviews = surveyData.googleReviewsInterest === 'yes';
 
   const emailBody = `Hi there,
 
@@ -17,10 +43,8 @@ Name: ${surveyData.fullName}
 Business: ${surveyData.businessName}
 Industry: ${surveyData.industry}
 Location: ${surveyData.province}
-Style: ${surveyData.stylePreference}
-Features needed: ${surveyData.features.join(', ')}
 Current website: ${surveyData.websiteUrl || 'None'}
-
+${wantsReviews ? 'Google Reviews: Yes, interested in free month!\n' : ''}
 My motivation: "${surveyData.motivation}"
 
 Looking forward to hearing from you!
@@ -40,7 +64,7 @@ ${emailBody}`;
   };
 
   const whatsappMessage = encodeURIComponent(
-    `Hi! I just qualified for the R5,000 website offer. My business is ${surveyData.businessName} and I'm looking for a ${surveyData.stylePreference} style website. Looking forward to discussing!`
+    `Hi! I just qualified for the R5,000 website offer. My business is ${surveyData.businessName} in ${surveyData.industry}. ${wantsReviews ? "I'm also interested in the free Google Reviews offer! " : ""}Looking forward to discussing!`
   );
 
   const mailtoLink = `mailto:designer@agency.co.za?subject=${encodeURIComponent(`Website Application - ${surveyData.businessName}`)}&body=${encodeURIComponent(emailBody)}`;
@@ -72,6 +96,26 @@ ${emailBody}`;
             </p>
           </div>
 
+          {/* Google Reviews Bonus */}
+          {wantsReviews && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+              className="bg-accent/10 border border-accent/30 rounded-xl p-5"
+            >
+              <div className="flex items-start gap-3">
+                <Star className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-foreground text-lg mb-1">⭐ Google Reviews Bonus Activated!</p>
+                  <p className="text-sm text-foreground">
+                    Great choice, {surveyData.fullName?.split(' ')[0]}! As a {surveyData.industry?.replace(/^[^\s]+\s/, '')} business in {surveyData.province?.replace(/\s*\(.*\)/, '')}, getting more 5-star reviews will set you apart from competitors. We'll set up your review generation system completely free for the first month alongside your new website.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          )}
+
           {/* Summary Card */}
           <div className="card-premium">
             <h2 className="font-semibold text-foreground text-lg mb-4 uppercase tracking-wide">
@@ -94,10 +138,12 @@ ${emailBody}`;
                 <span className="text-muted-foreground">Location:</span>
                 <span className="text-foreground font-medium">{surveyData.province}</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-muted-foreground">Style:</span>
-                <span className="text-foreground font-medium">{surveyData.stylePreference}</span>
-              </div>
+              {wantsReviews && (
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Google Reviews:</span>
+                  <span className="text-accent font-medium">✅ Free month activated</span>
+                </div>
+              )}
               {surveyData.motivation && (
                 <div className="pt-2 border-t border-border">
                   <span className="text-muted-foreground">Motivation:</span>

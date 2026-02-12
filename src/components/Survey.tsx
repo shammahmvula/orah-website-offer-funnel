@@ -7,12 +7,10 @@ import { RevenueQuestion } from './survey/questions/RevenueQuestion';
 import { IndustryQuestion } from './survey/questions/IndustryQuestion';
 import { SituationQuestion } from './survey/questions/SituationQuestion';
 import { InvestmentQuestion } from './survey/questions/InvestmentQuestion';
-import { StyleQuestion } from './survey/questions/StyleQuestion';
-import { FeaturesQuestion } from './survey/questions/FeaturesQuestion';
 import { MotivationQuestion } from './survey/questions/MotivationQuestion';
 import { ContactQuestion } from './survey/questions/ContactQuestion';
 
-const TOTAL_QUESTIONS = 10;
+const TOTAL_QUESTIONS = 8;
 
 export function Survey() {
   const { currentQuestion } = useSurvey();
@@ -25,10 +23,8 @@ export function Survey() {
       case 4: return <IndustryQuestion />;
       case 5: return <SituationQuestion />;
       case 6: return <InvestmentQuestion />;
-      case 7: return <StyleQuestion />;
-      case 8: return <FeaturesQuestion />;
-      case 9: return <MotivationQuestion />;
-      case 10: return <ContactQuestion />;
+      case 7: return <MotivationQuestion />;
+      case 8: return <ContactQuestion />;
       default: return <LocationQuestion />;
     }
   };
