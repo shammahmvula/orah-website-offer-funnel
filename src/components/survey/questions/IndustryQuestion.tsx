@@ -30,8 +30,6 @@ export function IndustryQuestion() {
   return (
     <QuestionCard
       question="What industry is your business in?"
-      showBack
-      onBack={() => setCurrentQuestion(3)}
     >
       <div className="space-y-3">
         {options.map((option) => (

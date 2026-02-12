@@ -34,8 +34,6 @@ export function InvestmentQuestion() {
       <QuestionCard
         question="If you qualify, are you ready to invest R5,000 to get your bespoke website built?"
         preText="Real talk: We only work with business owners who are serious about investing in their online presence. A quality bespoke website normally costs R20,000+. We're offering 50 spots at just R5,000."
-        showBack
-        onBack={() => setCurrentQuestion(5)}
       >
         <div className="space-y-3">
           {options.map((option) => (

@@ -21,8 +21,6 @@ export function BusinessAgeQuestion() {
   return (
     <QuestionCard
       question="How long have you been running your business?"
-      showBack
-      onBack={() => setCurrentQuestion(1)}
     >
       <div className="space-y-3">
         {options.map((option) => (

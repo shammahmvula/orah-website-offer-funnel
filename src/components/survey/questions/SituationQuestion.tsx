@@ -21,8 +21,6 @@ export function SituationQuestion() {
   return (
     <QuestionCard
       question="What's your current website situation?"
-      showBack
-      onBack={() => setCurrentQuestion(4)}
     >
       <div className="space-y-3">
         {options.map((option) => (
