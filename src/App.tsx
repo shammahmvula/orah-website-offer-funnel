@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SurveyProvider } from "@/contexts/SurveyContext";
 import Index from "./pages/Index";
+import ShortFunnel from "./pages/ShortFunnel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -18,6 +19,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/funnel" element={<ShortFunnel />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
