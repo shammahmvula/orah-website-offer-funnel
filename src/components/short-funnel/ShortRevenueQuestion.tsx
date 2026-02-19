@@ -8,7 +8,6 @@ const options = [
   "R50,000 - R100,000/month",
   "R100,000 - R250,000/month",
   "R250,000+/month",
-  "Prefer not to say",
 ];
 
 export function ShortRevenueQuestion() {
