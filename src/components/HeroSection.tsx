@@ -124,15 +124,6 @@ export function HeroSection() {
           </button>
         </motion.div>
 
-        {/* Social Proof */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center text-muted-foreground text-sm mt-4"
-        >
-          Already helped 127+ SA businesses look professional online
-        </motion.p>
       </div>
     </section>
   );
