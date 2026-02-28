@@ -24,6 +24,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/funnel" element={<ShortFunnel />} />
             <Route path="/apply" element={<ApplyFunnel />} />
+            <Route path="/website" element={<WebsiteIndex />} />
+            <Route path="/website/privacy-policy" element={<WebsitePrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
