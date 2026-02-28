@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SurveyProvider } from "@/contexts/SurveyContext";
 import Index from "./pages/Index";
 import ShortFunnel from "./pages/ShortFunnel";
+import ApplyFunnel from "./pages/ApplyFunnel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
