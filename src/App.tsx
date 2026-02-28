@@ -7,6 +7,8 @@ import { SurveyProvider } from "@/contexts/SurveyContext";
 import Index from "./pages/Index";
 import ShortFunnel from "./pages/ShortFunnel";
 import ApplyFunnel from "./pages/ApplyFunnel";
+import WebsiteIndex from "./pages/WebsiteIndex";
+import WebsitePrivacyPolicy from "./pages/WebsitePrivacyPolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
