@@ -58,6 +58,22 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        cosmic: {
+          dark: "hsl(var(--cosmic-dark, 240 25% 4%))",
+          deep: "hsl(var(--cosmic-deep, 240 20% 6%))",
+          blue: "hsl(var(--cosmic-blue, 246 75% 68%))",
+          purple: "hsl(var(--cosmic-purple, 246 75% 68%))",
+          glow: "hsl(var(--cosmic-glow, 246 75% 68%))",
+        },
+        option: {
+          bg: "hsl(var(--option-bg, 240 15% 10%))",
+          border: "hsl(var(--option-border, 240 10% 16%))",
+          "hover-border": "hsl(var(--option-hover-border, 246 75% 68%))",
+          "hover-bg": "hsl(var(--option-hover-bg, 240 12% 12%))",
+          "selected-border": "hsl(var(--option-selected-border, 246 75% 68%))",
+          "selected-bg": "hsl(var(--option-selected-bg, 246 75% 68% / 0.1))",
+        },
+        star: "hsl(var(--star-color, 0 0% 100%))",
       },
       borderRadius: {
         lg: "var(--radius)",
