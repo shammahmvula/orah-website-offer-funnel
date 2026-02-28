@@ -53,6 +53,20 @@
     --shadow-card-hover: 0 8px 32px -4px hsla(219, 52%, 18%, 0.12);
     --shadow-popup: 0 8px 24px hsla(0, 0%, 0%, 0.15);
     --shadow-button: 0 4px 16px hsla(43, 100%, 50%, 0.35);
+
+    /* Website page cosmic theme vars */
+    --cosmic-dark: 240 25% 4%;
+    --cosmic-deep: 240 20% 6%;
+    --cosmic-blue: 246 75% 68%;
+    --cosmic-purple: 246 75% 68%;
+    --cosmic-glow: 246 75% 68%;
+    --star-color: 0 0% 100%;
+    --option-bg: 240 15% 10%;
+    --option-border: 240 10% 16%;
+    --option-hover-border: 246 75% 68%;
+    --option-hover-bg: 240 12% 12%;
+    --option-selected-border: 246 75% 68%;
+    --option-selected-bg: 246 75% 68% / 0.1;
   }
 
   .dark {
