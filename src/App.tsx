@@ -21,6 +21,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/funnel" element={<ShortFunnel />} />
+            <Route path="/apply" element={<ApplyFunnel />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
