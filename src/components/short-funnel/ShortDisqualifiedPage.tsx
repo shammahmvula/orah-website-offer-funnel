@@ -21,8 +21,18 @@ export function ShortDisqualifiedPage() {
         monthly_revenue: surveyData.monthlyRevenue || null,
         investment_ready: surveyData.investmentReady || null,
         email,
+        industry: surveyData.industry || null,
         is_disqualified: true,
         disqualification_reason: 'Budget not ready',
+        funnel_source: 'funnel',
+        utm_source: surveyData.utmSource || null,
+        utm_medium: surveyData.utmMedium || null,
+        utm_campaign: surveyData.utmCampaign || null,
+        utm_content: surveyData.utmContent || null,
+        utm_term: surveyData.utmTerm || null,
+        campaign_id: surveyData.campaignId || null,
+        ad_id: surveyData.adId || null,
+        placement: surveyData.placement || null,
       });
       if (!error) setSubmitted(true);
     } catch (err) {
