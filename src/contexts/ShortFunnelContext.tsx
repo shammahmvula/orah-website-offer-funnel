@@ -51,6 +51,14 @@ const defaultData: ShortFunnelData = {
   billingAddress: '',
   googleReviewsInterest: '',
   depositResponse: '',
+  utmSource: '',
+  utmMedium: '',
+  utmCampaign: '',
+  utmContent: '',
+  utmTerm: '',
+  campaignId: '',
+  adId: '',
+  placement: '',
 };
 
 const ShortFunnelContext = createContext<ShortFunnelContextType | undefined>(undefined);
