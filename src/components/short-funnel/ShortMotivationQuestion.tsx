@@ -23,7 +23,7 @@ export function ShortMotivationQuestion() {
   };
 
   return (
-    <QuestionCard question="In one sentence, why do you want a new website?">
+    <QuestionCard question={personalizeText("In one sentence, why do you want a new website for your {industry} business?")}>
       <Textarea
         value={surveyData.motivation}
         onChange={(e) => handleChange(e.target.value)}
