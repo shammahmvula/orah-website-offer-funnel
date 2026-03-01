@@ -11,16 +11,24 @@ export function ShortDisqualifiedPage() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async () => {
-    if (email) {
-      await supabase.from('survey_responses').insert({
+    if (!email || isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.from('survey_responses').insert({
         monthly_revenue: surveyData.monthlyRevenue || null,
         investment_ready: surveyData.investmentReady || null,
         email,
         is_disqualified: true,
         disqualification_reason: 'Budget not ready',
       });
-      setSubmitted(true);
+      if (!error) setSubmitted(true);
+    } catch (err) {
+      // Silently handle
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -30,7 +38,7 @@ export function ShortDisqualifiedPage() {
       <div className="pt-20 pb-12 px-4">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-lg mx-auto text-center">
           <div className="card-premium">
-            <h1 className="font-serif text-3xl text-foreground mb-4"><h1 className="font-serif text-3xl text-foreground mb-4">We Get It. Timing Is Everything</h1></h1>
+            <h1 className="font-serif text-3xl text-foreground mb-4">We Get It. Timing Is Everything</h1>
             <p className="text-muted-foreground mb-6">No hard feelings! When you're ready to invest in your online presence, we'll be here. Join our waitlist and we'll notify you about future offers.</p>
             {submitted ? (
               <div className="py-4">

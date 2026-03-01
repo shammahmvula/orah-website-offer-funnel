@@ -22,20 +22,30 @@ export function Funnel2SuccessPage() {
   const [selectedTime, setSelectedTime] = useState<string>('');
 
   useEffect(() => {
+    const saved = localStorage.getItem('survey_submitted_funnel2');
+    if (saved) return;
+
     const saveResponse = async () => {
-      await supabase.from('survey_responses').insert({
-        monthly_revenue: surveyData.monthlyRevenue || null,
-        investment_ready: surveyData.investmentReady || null,
-        motivation: surveyData.motivation || null,
-        full_name: surveyData.fullName || null,
-        business_name: surveyData.businessName || null,
-        email: surveyData.email || null,
-        whatsapp: surveyData.whatsapp || null,
-        website_url: surveyData.websiteUrl || null,
-        billing_address: surveyData.billingAddress || null,
-        google_reviews_interest: surveyData.googleReviewsInterest === 'yes',
-        is_disqualified: false,
-      });
+      try {
+        const { error } = await supabase.from('survey_responses').insert({
+          monthly_revenue: surveyData.monthlyRevenue || null,
+          investment_ready: surveyData.investmentReady || null,
+          motivation: surveyData.motivation || null,
+          full_name: surveyData.fullName || null,
+          business_name: surveyData.businessName || null,
+          email: surveyData.email || null,
+          whatsapp: surveyData.whatsapp || null,
+          website_url: surveyData.websiteUrl || null,
+          billing_address: surveyData.billingAddress || null,
+          google_reviews_interest: surveyData.googleReviewsInterest === 'yes',
+          is_disqualified: false,
+        });
+        if (!error) {
+          localStorage.setItem('survey_submitted_funnel2', 'true');
+        }
+      } catch (err) {
+        // Silently handle
+      }
     };
     saveResponse();
   }, []);

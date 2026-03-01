@@ -13,9 +13,13 @@ export function DisqualifiedPage() {
 
   const isEcommerce = surveyData.industry?.includes('E-commerce');
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async () => {
-    if (email) {
-      await supabase.from('survey_responses').insert({
+    if (!email || isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.from('survey_responses').insert({
         province: surveyData.province || null,
         business_age: surveyData.businessAge || null,
         monthly_revenue: surveyData.monthlyRevenue || null,
@@ -26,7 +30,11 @@ export function DisqualifiedPage() {
         is_disqualified: true,
         disqualification_reason: isEcommerce ? 'E-commerce (not currently served)' : 'Budget not ready',
       });
-      setSubmitted(true);
+      if (!error) setSubmitted(true);
+    } catch (err) {
+      // Silently handle
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
