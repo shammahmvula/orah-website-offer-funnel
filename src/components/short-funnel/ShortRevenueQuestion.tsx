@@ -11,15 +11,15 @@ const options = [
 ];
 
 export function ShortRevenueQuestion() {
-  const { updateSurveyData, setCurrentQuestion } = useShortFunnel();
+  const { updateSurveyData, setCurrentQuestion, personalizeText } = useShortFunnel();
 
   const handleSelect = (option: string) => {
     updateSurveyData('monthlyRevenue', option);
-    setTimeout(() => setCurrentQuestion(2), 300);
+    setTimeout(() => setCurrentQuestion(3), 300);
   };
 
   return (
-    <QuestionCard question="Roughly, what does your business generate per month?">
+    <QuestionCard question={personalizeText("Roughly, what does your {industry} business generate per month?")}>
       <div className="space-y-3">
         {options.map((option) => (
           <AnswerOption

@@ -50,7 +50,7 @@ export function ShortMotivationQuestion() {
         <Button
           onClick={() => {
             if (surveyData.motivation.trim().length > 0) {
-              setCurrentQuestion(4);
+              setCurrentQuestion(5);
             }
           }}
           disabled={!surveyData.motivation.trim()}

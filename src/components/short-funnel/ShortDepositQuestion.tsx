@@ -7,7 +7,7 @@ export function ShortDepositQuestion() {
 
   const handleSelect = (option: string) => {
     updateSurveyData('depositResponse', option);
-    setTimeout(() => setCurrentQuestion(5), 300);
+    setTimeout(() => setCurrentQuestion(6), 300);
   };
 
   return (
