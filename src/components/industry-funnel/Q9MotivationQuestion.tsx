@@ -32,7 +32,7 @@ export function Q9MotivationQuestion() {
       </p>
       <Button
         onClick={() => {
-          if (data.motivation.trim()) setCurrentQuestion(10);
+          if (data.motivation.trim()) setCurrentQuestion(11);
         }}
         disabled={!data.motivation.trim()}
         className="btn-primary mt-2"

@@ -14,7 +14,7 @@ export function Q4WebsiteSituationQuestion() {
 
   const handleSelect = (option: string) => {
     updateData('websiteSituation', option);
-    setTimeout(() => setCurrentQuestion(5), 300);
+    setTimeout(() => setCurrentQuestion(6), 300);
   };
 
   return (
