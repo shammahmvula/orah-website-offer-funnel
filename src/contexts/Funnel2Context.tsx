@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export interface Funnel2Data {
   industry: string;
@@ -13,6 +14,15 @@ export interface Funnel2Data {
   billingAddress: string;
   googleReviewsInterest: string;
   depositResponse: string;
+  // UTM & Facebook ad tracking
+  utmSource: string;
+  utmMedium: string;
+  utmCampaign: string;
+  utmContent: string;
+  utmTerm: string;
+  campaignId: string;
+  adId: string;
+  placement: string;
 }
 
 interface Funnel2ContextType {
@@ -42,16 +52,51 @@ const defaultData: Funnel2Data = {
   billingAddress: '',
   googleReviewsInterest: '',
   depositResponse: '',
+  utmSource: '',
+  utmMedium: '',
+  utmCampaign: '',
+  utmContent: '',
+  utmTerm: '',
+  campaignId: '',
+  adId: '',
+  placement: '',
 };
 
 const Funnel2Context = createContext<Funnel2ContextType | undefined>(undefined);
 
 export function Funnel2Provider({ children }: { children: ReactNode }) {
+  const [searchParams] = useSearchParams();
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [surveyData, setSurveyData] = useState<Funnel2Data>(defaultData);
   const [isDisqualified, setIsDisqualified] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [showSurvey, setShowSurvey] = useState(false);
+
+  // Capture URL params on mount
+  useEffect(() => {
+    const industry = searchParams.get('industry') || '';
+    const utmSource = searchParams.get('utm_source') || '';
+    const utmMedium = searchParams.get('utm_medium') || '';
+    const utmCampaign = searchParams.get('utm_campaign') || '';
+    const utmContent = searchParams.get('utm_content') || '';
+    const utmTerm = searchParams.get('utm_term') || '';
+    const campaignId = searchParams.get('campaign_id') || '';
+    const adId = searchParams.get('ad_id') || '';
+    const placement = searchParams.get('placement') || '';
+
+    setSurveyData(prev => ({
+      ...prev,
+      industry: industry || prev.industry,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      utmContent,
+      utmTerm,
+      campaignId,
+      adId,
+      placement,
+    }));
+  }, [searchParams]);
 
   const updateSurveyData = (field: keyof Funnel2Data, value: string) => {
     setSurveyData(prev => ({ ...prev, [field]: value }));

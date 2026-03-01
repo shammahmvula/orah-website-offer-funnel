@@ -38,7 +38,17 @@ export function Funnel2SuccessPage() {
           website_url: surveyData.websiteUrl || null,
           billing_address: surveyData.billingAddress || null,
           google_reviews_interest: surveyData.googleReviewsInterest === 'yes',
+          industry: surveyData.industry || null,
           is_disqualified: false,
+          funnel_source: 'funnel-2',
+          utm_source: surveyData.utmSource || null,
+          utm_medium: surveyData.utmMedium || null,
+          utm_campaign: surveyData.utmCampaign || null,
+          utm_content: surveyData.utmContent || null,
+          utm_term: surveyData.utmTerm || null,
+          campaign_id: surveyData.campaignId || null,
+          ad_id: surveyData.adId || null,
+          placement: surveyData.placement || null,
         });
         if (!error) {
           localStorage.setItem('survey_submitted_funnel2', 'true');
