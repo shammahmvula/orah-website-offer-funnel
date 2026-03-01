@@ -5,8 +5,8 @@ import { Toast } from '../survey/Toast';
 import { useShortFunnel } from '@/contexts/ShortFunnelContext';
 
 const options = [
-  { label: "✅ Yes, I'm ready to invest in my business", toast: "Perfect! You're exactly who we love working with." },
-  { label: "❌ No, I'm just a tyre kicker, not willing to invest in my own business", toast: null },
+  { label: "✅ Yes, I'm ready to invest R5,000 now", toast: "Perfect! You're exactly who we love working with." },
+  { label: "❌ No, I'm just a tyre kicker — not willing to invest in my own business", toast: null },
 ];
 
 export function ShortInvestmentQuestion() {
@@ -25,15 +25,15 @@ export function ShortInvestmentQuestion() {
         setShowToast(true);
         setTimeout(() => setShowToast(false), 3000);
       }
-      setTimeout(() => setCurrentQuestion(4), 300);
+      setTimeout(() => setCurrentQuestion(3), 300);
     }
   };
 
   return (
     <>
       <QuestionCard
-        question="If you qualify, are you ready to invest in getting your bespoke website built?"
-        preText="Real talk: We only work with business owners who are serious about investing in their online presence. A quality bespoke website normally costs R20,000+. We're offering 50 spots at a 75% discount."
+        question="If you qualify, are you ready to invest R5,000 to get your bespoke website built?"
+        preText="Real talk: We only work with business owners who are serious about investing in their online presence. A quality bespoke website normally costs R20,000+. We're offering 50 spots at just R5,000."
       >
         <div className="space-y-3">
           {options.map((option) => (
