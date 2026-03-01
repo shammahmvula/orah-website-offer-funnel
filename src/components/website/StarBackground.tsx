@@ -36,13 +36,22 @@ const StarBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Base gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-cosmic-dark via-background to-cosmic-deep" />
+      <div className="absolute inset-0 bg-gradient-to-b from-cosmic-dark via-cosmic-deep to-cosmic-dark" />
+
+      {/* Soft center vignette to avoid washed-out mid section */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 45% at 50% 55%, hsl(var(--cosmic-deep) / 0.15) 0%, hsl(var(--cosmic-dark) / 0.78) 70%, hsl(var(--cosmic-dark) / 0.95) 100%)",
+        }}
+      />
 
       {/* Purple/blue glow near bottom */}
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full opacity-20"
         style={{
-          background: 'radial-gradient(ellipse at center, hsl(262 83% 58% / 0.4) 0%, transparent 70%)',
+          background: "radial-gradient(ellipse at center, hsl(var(--cosmic-purple) / 0.45) 0%, transparent 70%)",
         }}
       />
 
@@ -50,7 +59,7 @@ const StarBackground = () => {
       <div
         className="absolute bottom-20 left-1/3 w-[400px] h-[200px] rounded-full opacity-10"
         style={{
-          background: 'radial-gradient(ellipse at center, hsl(217 91% 60% / 0.5) 0%, transparent 70%)',
+          background: "radial-gradient(ellipse at center, hsl(var(--cosmic-blue) / 0.5) 0%, transparent 70%)",
         }}
       />
 
