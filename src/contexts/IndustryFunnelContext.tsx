@@ -11,6 +11,9 @@ export interface IndustryFunnelData {
   stylePreference: string;
   features: string[];
   motivation: string;
+  monthlyRevenue: string;
+  googleReviewsInterest: string;
+  billingAddress: string;
   fullName: string;
   businessName: string;
   email: string;
