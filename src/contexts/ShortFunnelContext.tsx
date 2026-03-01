@@ -74,6 +74,7 @@ export function ShortFunnelProvider({ children }: { children: ReactNode }) {
         setIsCompleted,
         showSurvey,
         setShowSurvey,
+        personalizeText,
       }}
     >
       {children}
