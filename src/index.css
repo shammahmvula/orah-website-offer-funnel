@@ -303,3 +303,19 @@
   from { opacity: 0; transform: translateX(20px); }
   to { opacity: 1; transform: translateX(0); }
 }
+
+/* Quiz light theme override */
+.quiz-light-theme {
+  --foreground: 220 15% 15%;
+  --muted-foreground: 220 10% 45%;
+  --muted: 220 15% 95%;
+  --border: 220 13% 88%;
+  --accent: 262 83% 58%;
+  --secondary-foreground: 220 15% 20%;
+  --option-bg: 220 15% 97%;
+  --option-border: 220 13% 90%;
+  --option-hover-bg: 220 15% 94%;
+  --option-hover-border: 262 83% 70%;
+  --option-selected-bg: 262 83% 95%;
+  --option-selected-border: 262 83% 58%;
+}
