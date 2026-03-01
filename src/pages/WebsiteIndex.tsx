@@ -23,8 +23,8 @@ const WebsiteIndex = () => {
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-3xl">
           <p
-            className="text-primary-foreground/70 text-lg md:text-xl tracking-wide mb-3 animate-fade-up"
-            style={{ animationDelay: "0.1s" }}
+            className="text-primary-foreground/60 text-lg md:text-xl tracking-wide mb-3 animate-fade-up"
+            style={{ animationDelay: "0.1s", fontFamily: "'Inter', sans-serif" }}
           >
             While You Read This,
           </p>
