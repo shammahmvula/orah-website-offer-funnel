@@ -24,6 +24,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/funnel" element={<ShortFunnel />} />
+            <Route path="/funnel-2" element={<Funnel2 />} />
             <Route path="/apply" element={<ApplyFunnel />} />
             <Route path="/website" element={<WebsiteIndex />} />
             <Route path="/website/privacy-policy" element={<WebsitePrivacyPolicy />} />
