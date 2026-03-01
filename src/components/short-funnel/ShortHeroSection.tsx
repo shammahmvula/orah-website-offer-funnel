@@ -4,11 +4,9 @@ import { Check } from 'lucide-react';
 import { useShortFunnel } from '@/contexts/ShortFunnelContext';
 
 const valueStack = [
-  "Custom bespoke design — no templates",
   "Mobile-optimized for every device",
   "Done in 7 days or less",
-  "FREE design mockup — no obligation",
-  "One-time payment — no monthly fees ever",
+  "Flexible payment options available",
 ];
 
 export function ShortHeroSection() {

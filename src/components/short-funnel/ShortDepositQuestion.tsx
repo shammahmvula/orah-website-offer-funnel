@@ -19,7 +19,7 @@ export function ShortDepositQuestion() {
       className="max-w-lg mx-auto px-4 py-12"
     >
       <h2 className="font-serif text-2xl sm:text-3xl text-foreground mb-4">
-        Perfect — one last thing to make sure we're a great fit.
+        Perfect, one last thing to make sure we're a great fit.
       </h2>
 
       <div className="card-premium mb-6 space-y-3">
@@ -30,14 +30,14 @@ export function ShortDepositQuestion() {
           The remaining balance is only due once your website is live and you're <span className="font-semibold">100% happy with it</span>.
         </p>
         <p className="text-accent font-bold text-sm pt-2 border-t border-border">
-          💰 If you're not happy, we'll refund your 10% deposit — no questions asked. That's our guarantee to you.
+          💰 If you're not happy, we'll refund your 10% deposit, no questions asked. That's our guarantee to you.
         </p>
       </div>
 
       <h3 className="text-foreground font-semibold mb-3">Does this approach work for you?</h3>
 
       <div className="space-y-3">
-        <AnswerOption label="Yes, that's fair — let's do it ✅" onClick={() => handleSelect("Yes, that's fair")} />
+        <AnswerOption label="Yes, that's fair, let's do it ✅" onClick={() => handleSelect("Yes, that's fair")} />
         <AnswerOption label="I'd like to discuss this on our call 📞" onClick={() => handleSelect("Discuss on call")} />
       </div>
     </motion.div>
