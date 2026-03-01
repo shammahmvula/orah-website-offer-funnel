@@ -57,6 +57,10 @@ export function ShortFunnelProvider({ children }: { children: ReactNode }) {
     setSurveyData(prev => ({ ...prev, [field]: value }));
   };
 
+  const personalizeText = (text: string) => {
+    return text.replace(/\{industry\}/g, surveyData.industry || 'business');
+  };
+
   return (
     <ShortFunnelContext.Provider
       value={{
