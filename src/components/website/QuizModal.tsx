@@ -270,6 +270,30 @@ const QuizModal = ({ isOpen }: QuizModalProps) => {
               setIsQualifying(false);
               setShowResult(true);
               fireConfetti();
+
+              // Save lead to website_leads table
+              const params = new URLSearchParams(window.location.search);
+              supabase.from('website_leads').insert({
+                business_type: answers.businessType || null,
+                years_in_business: answers.yearsInBusiness || null,
+                location: answers.location || null,
+                multiple_locations: answers.multipleLocations || false,
+                location_count: answers.locationCount || null,
+                website_status: answers.websiteStatus || null,
+                review_count: answers.reviewCount || null,
+                review_frequency: answers.reviewFrequency || null,
+                call_handling: answers.callHandling || null,
+                biggest_challenge: answers.biggestChallenge || null,
+                ready_to_start: answers.readyToStart || null,
+                objection: answers.objection || null,
+                utm_source: params.get('utm_source') || null,
+                utm_medium: params.get('utm_medium') || null,
+                utm_campaign: params.get('utm_campaign') || null,
+                utm_content: params.get('utm_content') || null,
+                utm_term: params.get('utm_term') || null,
+              }).then(({ error }) => {
+                if (error) console.error('Failed to save website lead:', error);
+              });
             }, 1200);
           }
         }, 600);
