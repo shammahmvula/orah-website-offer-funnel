@@ -16,13 +16,16 @@ export type Database = {
     Tables: {
       survey_responses: {
         Row: {
+          ad_id: string | null
           billing_address: string | null
           business_age: string | null
           business_name: string | null
+          campaign_id: string | null
           created_at: string
           disqualification_reason: string | null
           email: string | null
           full_name: string | null
+          funnel_source: string | null
           google_reviews_interest: boolean | null
           id: string
           industry: string | null
@@ -30,19 +33,28 @@ export type Database = {
           is_disqualified: boolean | null
           monthly_revenue: string | null
           motivation: string | null
+          placement: string | null
           province: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
           website_situation: string | null
           website_url: string | null
           whatsapp: string | null
         }
         Insert: {
+          ad_id?: string | null
           billing_address?: string | null
           business_age?: string | null
           business_name?: string | null
+          campaign_id?: string | null
           created_at?: string
           disqualification_reason?: string | null
           email?: string | null
           full_name?: string | null
+          funnel_source?: string | null
           google_reviews_interest?: boolean | null
           id?: string
           industry?: string | null
@@ -50,19 +62,28 @@ export type Database = {
           is_disqualified?: boolean | null
           monthly_revenue?: string | null
           motivation?: string | null
+          placement?: string | null
           province?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
           website_situation?: string | null
           website_url?: string | null
           whatsapp?: string | null
         }
         Update: {
+          ad_id?: string | null
           billing_address?: string | null
           business_age?: string | null
           business_name?: string | null
+          campaign_id?: string | null
           created_at?: string
           disqualification_reason?: string | null
           email?: string | null
           full_name?: string | null
+          funnel_source?: string | null
           google_reviews_interest?: boolean | null
           id?: string
           industry?: string | null
@@ -70,7 +91,13 @@ export type Database = {
           is_disqualified?: boolean | null
           monthly_revenue?: string | null
           motivation?: string | null
+          placement?: string | null
           province?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
           website_situation?: string | null
           website_url?: string | null
           whatsapp?: string | null
