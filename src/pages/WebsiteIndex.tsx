@@ -34,7 +34,7 @@ const WebsiteIndex = () => {
             style={{ animationDelay: "0.2s", fontFamily: "'Inter', sans-serif" }}
           >
             Your Competitor Just<br />
-            Got <span className="italic text-cosmic-purple" style={{ fontFamily: "'Inter', sans-serif" }}>Another</span> Customer.
+            Got <span className="italic text-cosmic-purple" style={{ fontFamily: "'Playfair Display', serif" }}>Another</span> Customer.
           </h1>
 
           <p
