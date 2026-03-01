@@ -19,7 +19,7 @@ export function ShortDepositQuestion() {
       className="max-w-lg mx-auto px-4 py-12"
     >
       <h2 className="font-serif text-2xl sm:text-3xl text-foreground mb-4">
-        Perfect — one last thing to make sure we're a great fit.
+        Perfect, one last thing to make sure we're a great fit.
       </h2>
 
       <div className="card-premium mb-6 space-y-3">
