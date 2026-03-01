@@ -11,6 +11,7 @@ export interface ShortFunnelData {
   websiteUrl: string;
   billingAddress: string;
   googleReviewsInterest: string;
+  depositResponse: string;
 }
 
 interface ShortFunnelContextType {
