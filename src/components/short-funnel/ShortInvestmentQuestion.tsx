@@ -6,7 +6,7 @@ import { useShortFunnel } from '@/contexts/ShortFunnelContext';
 
 const options = [
   { label: "✅ Yes, I'm ready to invest in my business", toast: "Perfect! You're exactly who we love working with." },
-  { label: "❌ No, I'm just a tyre kicker — not willing to invest in my own business", toast: null },
+  { label: "❌ No, I'm just a tyre kicker, not willing to invest in my own business", toast: null },
 ];
 
 export function ShortInvestmentQuestion() {

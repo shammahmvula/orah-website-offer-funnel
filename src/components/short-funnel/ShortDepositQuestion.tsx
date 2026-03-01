@@ -37,7 +37,7 @@ export function ShortDepositQuestion() {
       <h3 className="text-foreground font-semibold mb-3">Does this approach work for you?</h3>
 
       <div className="space-y-3">
-        <AnswerOption label="Yes, that's fair — let's do it ✅" onClick={() => handleSelect("Yes, that's fair")} />
+        <AnswerOption label="Yes, that's fair, let's do it ✅" onClick={() => handleSelect("Yes, that's fair")} />
         <AnswerOption label="I'd like to discuss this on our call 📞" onClick={() => handleSelect("Discuss on call")} />
       </div>
     </motion.div>
