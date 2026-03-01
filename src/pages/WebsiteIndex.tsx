@@ -30,11 +30,11 @@ const WebsiteIndex = () => {
           </p>
 
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-black text-primary-foreground leading-tight mb-8 animate-fade-up"
-            style={{ animationDelay: "0.2s" }}
+            className="text-4xl sm:text-5xl md:text-6xl font-black text-primary-foreground leading-[1.1] mb-8 animate-fade-up tracking-tight"
+            style={{ animationDelay: "0.2s", fontFamily: "'Inter', sans-serif" }}
           >
             Your Competitor Just<br />
-            Got <span className="font-display italic text-cosmic-purple">Another</span> Customer.
+            Got <span className="italic text-cosmic-purple" style={{ fontFamily: "'Inter', sans-serif" }}>Another</span> Customer.
           </h1>
 
           <p
