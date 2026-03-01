@@ -29,6 +29,9 @@ export function ShortDepositQuestion() {
         <p className="text-foreground text-sm">
           The remaining balance is only due once your website is live and you're <span className="font-semibold">100% happy with it</span>.
         </p>
+        <p className="text-accent font-bold text-sm pt-2 border-t border-border">
+          💰 If you're not happy, we'll refund your 10% deposit — no questions asked. That's our guarantee to you.
+        </p>
       </div>
 
       <h3 className="text-foreground font-semibold mb-3">Does this approach work for you?</h3>
