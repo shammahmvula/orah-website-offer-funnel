@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 export interface ShortFunnelData {
+  industry: string;
   monthlyRevenue: string;
   investmentReady: string;
   motivation: string;
