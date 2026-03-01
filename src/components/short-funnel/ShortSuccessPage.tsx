@@ -118,8 +118,7 @@ ${emailBody}`;
               <CalendarIcon className="w-5 h-5 text-accent" />
               <h2 className="font-semibold text-foreground text-lg">Step 1: Pick a date for your final sales call</h2>
             </div>
-            <p className="text-sm text-muted-foreground mb-2">We'll present your custom mockup, finalize the build details, and walk you through flexible payment options.</p>
-            <p className="text-sm text-accent font-medium mb-4">🎨 In the meantime, our designer is already reviewing your application and will begin crafting a custom mockup tailored to your business.</p>
+            <p className="text-sm text-muted-foreground mb-4">We'll present your custom mockup, finalize the build details, and walk you through flexible payment options.</p>
 
             <div className="flex justify-center">
               <Calendar
