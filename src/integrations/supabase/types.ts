@@ -122,6 +122,72 @@ export type Database = {
         }
         Relationships: []
       }
+      website_leads: {
+        Row: {
+          biggest_challenge: string | null
+          business_type: string | null
+          call_handling: string | null
+          created_at: string
+          id: string
+          location: string | null
+          location_count: string | null
+          multiple_locations: boolean | null
+          objection: string | null
+          ready_to_start: string | null
+          review_count: string | null
+          review_frequency: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+          utm_term: string | null
+          website_status: string | null
+          years_in_business: string | null
+        }
+        Insert: {
+          biggest_challenge?: string | null
+          business_type?: string | null
+          call_handling?: string | null
+          created_at?: string
+          id?: string
+          location?: string | null
+          location_count?: string | null
+          multiple_locations?: boolean | null
+          objection?: string | null
+          ready_to_start?: string | null
+          review_count?: string | null
+          review_frequency?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+          website_status?: string | null
+          years_in_business?: string | null
+        }
+        Update: {
+          biggest_challenge?: string | null
+          business_type?: string | null
+          call_handling?: string | null
+          created_at?: string
+          id?: string
+          location?: string | null
+          location_count?: string | null
+          multiple_locations?: boolean | null
+          objection?: string | null
+          ready_to_start?: string | null
+          review_count?: string | null
+          review_frequency?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+          utm_term?: string | null
+          website_status?: string | null
+          years_in_business?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
