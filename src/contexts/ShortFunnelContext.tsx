@@ -30,6 +30,7 @@ interface ShortFunnelContextType {
 }
 
 const defaultData: ShortFunnelData = {
+  industry: '',
   monthlyRevenue: '',
   investmentReady: '',
   motivation: '',
