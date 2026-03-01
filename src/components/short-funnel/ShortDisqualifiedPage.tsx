@@ -11,16 +11,24 @@ export function ShortDisqualifiedPage() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async () => {
-    if (email) {
-      await supabase.from('survey_responses').insert({
+    if (!email || isSubmitting) return;
+    setIsSubmitting(true);
+    try {
+      const { error } = await supabase.from('survey_responses').insert({
         monthly_revenue: surveyData.monthlyRevenue || null,
         investment_ready: surveyData.investmentReady || null,
         email,
         is_disqualified: true,
         disqualification_reason: 'Budget not ready',
       });
-      setSubmitted(true);
+      if (!error) setSubmitted(true);
+    } catch (err) {
+      // Silently handle
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

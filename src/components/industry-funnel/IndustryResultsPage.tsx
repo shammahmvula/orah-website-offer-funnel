@@ -10,21 +10,31 @@ export function IndustryResultsPage() {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
+    const saved = localStorage.getItem('survey_submitted_industry');
+    if (saved) return;
+
     const save = async () => {
-      await supabase.from('survey_responses').insert({
-        full_name: data.fullName,
-        business_name: data.businessName,
-        email: data.email,
-        whatsapp: data.whatsapp,
-        website_url: data.websiteUrl || null,
-        industry: data.industry,
-        province: data.location,
-        business_age: data.businessAge,
-        website_situation: data.websiteSituation,
-        investment_ready: data.investmentReady,
-        motivation: data.motivation,
-        is_disqualified: false,
-      });
+      try {
+        const { error } = await supabase.from('survey_responses').insert({
+          full_name: data.fullName,
+          business_name: data.businessName,
+          email: data.email,
+          whatsapp: data.whatsapp,
+          website_url: data.websiteUrl || null,
+          industry: data.industry,
+          province: data.location,
+          business_age: data.businessAge,
+          website_situation: data.websiteSituation,
+          investment_ready: data.investmentReady,
+          motivation: data.motivation,
+          is_disqualified: false,
+        });
+        if (!error) {
+          localStorage.setItem('survey_submitted_industry', 'true');
+        }
+      } catch (err) {
+        // Silently handle
+      }
     };
     save();
   }, []);
