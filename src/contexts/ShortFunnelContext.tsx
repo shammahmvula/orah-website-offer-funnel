@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export interface ShortFunnelData {
   industry: string;
@@ -13,6 +14,14 @@ export interface ShortFunnelData {
   billingAddress: string;
   googleReviewsInterest: string;
   depositResponse: string;
+  utmSource: string;
+  utmMedium: string;
+  utmCampaign: string;
+  utmContent: string;
+  utmTerm: string;
+  campaignId: string;
+  adId: string;
+  placement: string;
 }
 
 interface ShortFunnelContextType {
