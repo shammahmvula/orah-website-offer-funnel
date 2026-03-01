@@ -11,6 +11,9 @@ export interface IndustryFunnelData {
   stylePreference: string;
   features: string[];
   motivation: string;
+  monthlyRevenue: string;
+  googleReviewsInterest: string;
+  billingAddress: string;
   fullName: string;
   businessName: string;
   email: string;
@@ -46,6 +49,9 @@ const defaultData: IndustryFunnelData = {
   stylePreference: '',
   features: [],
   motivation: '',
+  monthlyRevenue: '',
+  googleReviewsInterest: '',
+  billingAddress: '',
   fullName: '',
   businessName: '',
   email: '',

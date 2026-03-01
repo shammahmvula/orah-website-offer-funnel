@@ -14,7 +14,7 @@ export function Q5FrustrationQuestion() {
 
   const handleSelect = (option: string) => {
     updateData('frustration', option);
-    setTimeout(() => setCurrentQuestion(6), 300);
+    setTimeout(() => setCurrentQuestion(7), 300);
   };
 
   return (

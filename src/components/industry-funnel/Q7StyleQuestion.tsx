@@ -28,7 +28,7 @@ export function Q7StyleQuestion() {
 
   const handleSelect = (style: string) => {
     updateData('stylePreference', style);
-    setTimeout(() => setCurrentQuestion(8), 300);
+    setTimeout(() => setCurrentQuestion(9), 300);
   };
 
   return (

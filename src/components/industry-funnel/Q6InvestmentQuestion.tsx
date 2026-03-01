@@ -16,7 +16,7 @@ export function Q6InvestmentQuestion() {
     if (option.disqualify) {
       setIsDisqualified(true);
     } else {
-      setTimeout(() => setCurrentQuestion(7), 300);
+      setTimeout(() => setCurrentQuestion(8), 300);
     }
   };
 

@@ -3,24 +3,25 @@ import { useIndustryFunnel } from '@/contexts/IndustryFunnelContext';
 import { AnswerOption } from '../survey/AnswerOption';
 
 const options = [
-  '🚫 No website yet',
-  '😬 Embarrassingly outdated',
-  '📉 Doesn\'t bring customers',
-  '😎 Decent but want better',
+  "Under R20,000/month",
+  "R20,000 - R50,000/month",
+  "R50,000 - R100,000/month",
+  "R100,000 - R250,000/month",
+  "R250,000+/month",
+  "Prefer not to say",
 ];
 
-export function Q4WebsiteSituationQuestion() {
+export function Q4RevenueQuestion() {
   const { updateData, setCurrentQuestion, personalizeText } = useIndustryFunnel();
 
   const handleSelect = (option: string) => {
-    updateData('websiteSituation', option);
-    setTimeout(() => setCurrentQuestion(6), 300);
+    updateData('monthlyRevenue', option);
+    setTimeout(() => setCurrentQuestion(5), 300);
   };
 
   return (
     <IndustryQuestionCard
-      question={personalizeText("What's the current state of your {industry} website?")}
-      subhead="Be honest — we've seen it all."
+      question={personalizeText("Roughly, what does your {industry} business generate per month?")}
     >
       <div className="space-y-3">
         {options.map(o => (

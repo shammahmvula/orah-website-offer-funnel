@@ -27,7 +27,7 @@ export function Q8FeaturesQuestion() {
 
   const handleContinue = () => {
     updateData('features', selected);
-    setTimeout(() => setCurrentQuestion(9), 200);
+    setTimeout(() => setCurrentQuestion(10), 200);
   };
 
   return (
