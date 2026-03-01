@@ -28,12 +28,10 @@ const ShortFunnelContent = () => {
   );
 };
 
-function ShortFunnelPage() {
-  return (
-    <ShortFunnelProvider>
-      <ShortFunnelContent />
-    </ShortFunnelProvider>
-  );
-}
+const ShortFunnelPage = () => (
+  <ShortFunnelProvider>
+    <ShortFunnelContent />
+  </ShortFunnelProvider>
+);
 
 export default ShortFunnelPage;

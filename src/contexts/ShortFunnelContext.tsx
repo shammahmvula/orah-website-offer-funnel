@@ -1,7 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 export interface ShortFunnelData {
-  industry: string;
   monthlyRevenue: string;
   investmentReady: string;
   motivation: string;
@@ -12,7 +11,6 @@ export interface ShortFunnelData {
   websiteUrl: string;
   billingAddress: string;
   googleReviewsInterest: string;
-  depositResponse: string;
 }
 
 interface ShortFunnelContextType {
@@ -26,11 +24,9 @@ interface ShortFunnelContextType {
   setIsCompleted: (val: boolean) => void;
   showSurvey: boolean;
   setShowSurvey: (val: boolean) => void;
-  personalizeText: (text: string) => string;
 }
 
 const defaultData: ShortFunnelData = {
-  industry: '',
   monthlyRevenue: '',
   investmentReady: '',
   motivation: '',
@@ -41,7 +37,6 @@ const defaultData: ShortFunnelData = {
   websiteUrl: '',
   billingAddress: '',
   googleReviewsInterest: '',
-  depositResponse: '',
 };
 
 const ShortFunnelContext = createContext<ShortFunnelContextType | undefined>(undefined);
@@ -57,10 +52,6 @@ export function ShortFunnelProvider({ children }: { children: ReactNode }) {
     setSurveyData(prev => ({ ...prev, [field]: value }));
   };
 
-  const personalizeText = (text: string) => {
-    return text.replace(/\{industry\}/g, surveyData.industry || 'business');
-  };
-
   return (
     <ShortFunnelContext.Provider
       value={{
@@ -74,7 +65,6 @@ export function ShortFunnelProvider({ children }: { children: ReactNode }) {
         setIsCompleted,
         showSurvey,
         setShowSurvey,
-        personalizeText,
       }}
     >
       {children}
