@@ -39,7 +39,7 @@ export function ShortContactQuestion() {
   };
 
   return (
-    <QuestionCard question="🎉 Great news! Based on your answers, you're a strong candidate for our R5,000 offer.">
+    <QuestionCard question="🎉 Great news! Based on your answers, you're a strong candidate for our limited offer.">
       {/* Google Reviews Offer */}
       <div className="bg-accent/10 border border-accent/30 rounded-xl p-4 mb-6">
         <p className="text-foreground font-semibold mb-2">⭐ BONUS OFFER</p>
