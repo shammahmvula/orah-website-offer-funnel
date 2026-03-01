@@ -4,9 +4,10 @@ import { ProgressBar } from '../survey/ProgressBar';
 import { ShortRevenueQuestion } from './ShortRevenueQuestion';
 import { ShortInvestmentQuestion } from './ShortInvestmentQuestion';
 import { ShortMotivationQuestion } from './ShortMotivationQuestion';
+import { ShortDepositQuestion } from './ShortDepositQuestion';
 import { ShortContactQuestion } from './ShortContactQuestion';
 
-const TOTAL_QUESTIONS = 4;
+const TOTAL_QUESTIONS = 5;
 
 export function ShortSurvey() {
   const { currentQuestion } = useShortFunnel();
@@ -16,7 +17,8 @@ export function ShortSurvey() {
       case 1: return <ShortRevenueQuestion />;
       case 2: return <ShortInvestmentQuestion />;
       case 3: return <ShortMotivationQuestion />;
-      case 4: return <ShortContactQuestion />;
+      case 4: return <ShortDepositQuestion />;
+      case 5: return <ShortContactQuestion />;
       default: return <ShortRevenueQuestion />;
     }
   };
