@@ -11,6 +11,7 @@ export interface ShortFunnelData {
   websiteUrl: string;
   billingAddress: string;
   googleReviewsInterest: string;
+  depositResponse: string;
 }
 
 interface ShortFunnelContextType {
@@ -37,6 +38,7 @@ const defaultData: ShortFunnelData = {
   websiteUrl: '',
   billingAddress: '',
   googleReviewsInterest: '',
+  depositResponse: '',
 };
 
 const ShortFunnelContext = createContext<ShortFunnelContextType | undefined>(undefined);
