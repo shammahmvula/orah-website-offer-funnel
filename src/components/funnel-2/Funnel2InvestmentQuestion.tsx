@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { QuestionCard } from '../survey/QuestionCard';
 import { AnswerOption } from '../survey/AnswerOption';
 import { Toast } from '../survey/Toast';
-import { useShortFunnel } from '@/contexts/ShortFunnelContext';
+import { useFunnel2 } from '@/contexts/Funnel2Context';
 
 const options = [
   { label: "✅ Yes, I'm ready to invest in my business", toast: "Perfect! You're exactly who we love working with." },
   { label: "❌ No, I'm just a tyre kicker, not willing to invest in my own business", toast: null },
 ];
 
-export function ShortInvestmentQuestion() {
-  const { updateSurveyData, setCurrentQuestion, setIsDisqualified } = useShortFunnel();
+export function Funnel2InvestmentQuestion() {
+  const { updateSurveyData, setCurrentQuestion, setIsDisqualified } = useFunnel2();
   const [toastMessage, setToastMessage] = useState('');
   const [showToast, setShowToast] = useState(false);
 

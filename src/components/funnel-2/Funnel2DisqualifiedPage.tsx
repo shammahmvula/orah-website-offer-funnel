@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useShortFunnel } from '@/contexts/ShortFunnelContext';
+import { useFunnel2 } from '@/contexts/Funnel2Context';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { FomoTicker } from '../FomoTicker';
 import { supabase } from '@/integrations/supabase/client';
 
-export function ShortDisqualifiedPage() {
-  const { surveyData } = useShortFunnel();
+export function Funnel2DisqualifiedPage() {
+  const { surveyData } = useFunnel2();
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -30,7 +30,7 @@ export function ShortDisqualifiedPage() {
       <div className="pt-20 pb-12 px-4">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-lg mx-auto text-center">
           <div className="card-premium">
-            <h1 className="font-serif text-3xl text-foreground mb-4"><h1 className="font-serif text-3xl text-foreground mb-4">We Get It. Timing Is Everything</h1></h1>
+            <h1 className="font-serif text-3xl text-foreground mb-4">We Get It. Timing Is Everything</h1>
             <p className="text-muted-foreground mb-6">No hard feelings! When you're ready to invest in your online presence, we'll be here. Join our waitlist and we'll notify you about future offers.</p>
             {submitted ? (
               <div className="py-4">

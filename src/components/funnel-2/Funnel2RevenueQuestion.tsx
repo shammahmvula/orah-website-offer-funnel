@@ -1,6 +1,6 @@
 import { QuestionCard } from '../survey/QuestionCard';
 import { AnswerOption } from '../survey/AnswerOption';
-import { useShortFunnel } from '@/contexts/ShortFunnelContext';
+import { useFunnel2 } from '@/contexts/Funnel2Context';
 
 const options = [
   "Under R20,000/month",
@@ -10,8 +10,8 @@ const options = [
   "R250,000+/month",
 ];
 
-export function ShortRevenueQuestion() {
-  const { updateSurveyData, setCurrentQuestion, personalizeText } = useShortFunnel();
+export function Funnel2RevenueQuestion() {
+  const { updateSurveyData, setCurrentQuestion, personalizeText } = useFunnel2();
 
   const handleSelect = (option: string) => {
     updateSurveyData('monthlyRevenue', option);

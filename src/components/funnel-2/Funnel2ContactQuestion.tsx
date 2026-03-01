@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { QuestionCard } from '../survey/QuestionCard';
-import { useShortFunnel } from '@/contexts/ShortFunnelContext';
+import { useFunnel2 } from '@/contexts/Funnel2Context';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 
-export function ShortContactQuestion() {
-  const { surveyData, updateSurveyData, setIsCompleted } = useShortFunnel();
+export function Funnel2ContactQuestion() {
+  const { surveyData, updateSurveyData, setIsCompleted } = useFunnel2();
   const [agreed, setAgreed] = useState(false);
   const [googleReviews, setGoogleReviews] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -40,7 +40,6 @@ export function ShortContactQuestion() {
 
   return (
     <QuestionCard question="🎉 Great news! Based on your answers, you're a strong candidate for our limited offer.">
-      {/* Google Reviews Offer */}
       <div className="bg-accent/10 border border-accent/30 rounded-xl p-4 mb-6">
         <p className="text-foreground font-semibold mb-2">⭐ BONUS OFFER</p>
         <p className="text-sm text-foreground mb-3">
@@ -62,35 +61,35 @@ export function ShortContactQuestion() {
 
       <div className="space-y-4">
         <div>
-          <Label htmlFor="sf-fullName" className="text-foreground">Full Name *</Label>
-          <Input id="sf-fullName" placeholder="Your name" value={surveyData.fullName} onChange={(e) => updateSurveyData('fullName', e.target.value)} className={`h-12 mt-1 ${errors.fullName ? 'border-destructive' : ''}`} />
+          <Label htmlFor="f2-fullName" className="text-foreground">Full Name *</Label>
+          <Input id="f2-fullName" placeholder="Your name" value={surveyData.fullName} onChange={(e) => updateSurveyData('fullName', e.target.value)} className={`h-12 mt-1 ${errors.fullName ? 'border-destructive' : ''}`} />
           {errors.fullName && <p className="text-destructive text-sm mt-1">{errors.fullName}</p>}
         </div>
         <div>
-          <Label htmlFor="sf-businessName" className="text-foreground">Business Name *</Label>
-          <Input id="sf-businessName" placeholder="Your business name" value={surveyData.businessName} onChange={(e) => updateSurveyData('businessName', e.target.value)} className={`h-12 mt-1 ${errors.businessName ? 'border-destructive' : ''}`} />
+          <Label htmlFor="f2-businessName" className="text-foreground">Business Name *</Label>
+          <Input id="f2-businessName" placeholder="Your business name" value={surveyData.businessName} onChange={(e) => updateSurveyData('businessName', e.target.value)} className={`h-12 mt-1 ${errors.businessName ? 'border-destructive' : ''}`} />
           {errors.businessName && <p className="text-destructive text-sm mt-1">{errors.businessName}</p>}
         </div>
         <div>
-          <Label htmlFor="sf-email" className="text-foreground">Email Address *</Label>
-          <Input id="sf-email" type="email" placeholder="email@yourbusiness.co.za" value={surveyData.email} onChange={(e) => updateSurveyData('email', e.target.value)} className={`h-12 mt-1 ${errors.email ? 'border-destructive' : ''}`} />
+          <Label htmlFor="f2-email" className="text-foreground">Email Address *</Label>
+          <Input id="f2-email" type="email" placeholder="email@yourbusiness.co.za" value={surveyData.email} onChange={(e) => updateSurveyData('email', e.target.value)} className={`h-12 mt-1 ${errors.email ? 'border-destructive' : ''}`} />
           {errors.email && <p className="text-destructive text-sm mt-1">{errors.email}</p>}
         </div>
         <div>
-          <Label htmlFor="sf-whatsapp" className="text-foreground">WhatsApp Number *</Label>
-          <Input id="sf-whatsapp" type="tel" placeholder="e.g., 082 123 4567" value={surveyData.whatsapp} onChange={(e) => updateSurveyData('whatsapp', e.target.value)} className={`h-12 mt-1 ${errors.whatsapp ? 'border-destructive' : ''}`} />
+          <Label htmlFor="f2-whatsapp" className="text-foreground">WhatsApp Number *</Label>
+          <Input id="f2-whatsapp" type="tel" placeholder="e.g., 082 123 4567" value={surveyData.whatsapp} onChange={(e) => updateSurveyData('whatsapp', e.target.value)} className={`h-12 mt-1 ${errors.whatsapp ? 'border-destructive' : ''}`} />
           <p className="text-sm text-muted-foreground mt-1">We'll contact you on WhatsApp for faster communication</p>
           {errors.whatsapp && <p className="text-destructive text-sm mt-1">{errors.whatsapp}</p>}
         </div>
         <div>
-          <Label htmlFor="sf-billingAddress" className="text-foreground">Business / Billing Address *</Label>
-          <Input id="sf-billingAddress" placeholder="e.g., 123 Main Rd, Sandton, Gauteng" value={surveyData.billingAddress} onChange={(e) => updateSurveyData('billingAddress', e.target.value)} className={`h-12 mt-1 ${errors.billingAddress ? 'border-destructive' : ''}`} />
+          <Label htmlFor="f2-billingAddress" className="text-foreground">Business / Billing Address *</Label>
+          <Input id="f2-billingAddress" placeholder="e.g., 123 Main Rd, Sandton, Gauteng" value={surveyData.billingAddress} onChange={(e) => updateSurveyData('billingAddress', e.target.value)} className={`h-12 mt-1 ${errors.billingAddress ? 'border-destructive' : ''}`} />
           <p className="text-sm text-muted-foreground mt-1">We need this for your invoice</p>
           {errors.billingAddress && <p className="text-destructive text-sm mt-1">{errors.billingAddress}</p>}
         </div>
         <div>
-          <Label htmlFor="sf-websiteUrl" className="text-foreground">Website URL (optional)</Label>
-          <Input id="sf-websiteUrl" placeholder="www.yourbusiness.co.za (if you have one)" value={surveyData.websiteUrl} onChange={(e) => updateSurveyData('websiteUrl', e.target.value)} className="h-12 mt-1" />
+          <Label htmlFor="f2-websiteUrl" className="text-foreground">Website URL (optional)</Label>
+          <Input id="f2-websiteUrl" placeholder="www.yourbusiness.co.za (if you have one)" value={surveyData.websiteUrl} onChange={(e) => updateSurveyData('websiteUrl', e.target.value)} className="h-12 mt-1" />
         </div>
 
         <label className={`flex items-start gap-3 p-4 rounded-xl border ${errors.agreed ? 'border-destructive' : 'border-border'} cursor-pointer`}>

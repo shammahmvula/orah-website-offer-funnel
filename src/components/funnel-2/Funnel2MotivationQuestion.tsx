@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { QuestionCard } from '../survey/QuestionCard';
-import { useShortFunnel } from '@/contexts/ShortFunnelContext';
+import { useFunnel2 } from '@/contexts/Funnel2Context';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 
@@ -10,8 +10,8 @@ const examples = [
   "I want something I'm proud to put on my business card",
 ];
 
-export function ShortMotivationQuestion() {
-  const { surveyData, updateSurveyData, setCurrentQuestion, personalizeText } = useShortFunnel();
+export function Funnel2MotivationQuestion() {
+  const { surveyData, updateSurveyData, setCurrentQuestion, personalizeText } = useFunnel2();
   const [charCount, setCharCount] = useState(surveyData.motivation.length);
   const maxChars = 200;
 

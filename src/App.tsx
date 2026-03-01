@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SurveyProvider } from "@/contexts/SurveyContext";
 import Index from "./pages/Index";
 import ShortFunnel from "./pages/ShortFunnel";
+import Funnel2 from "./pages/Funnel2";
 import ApplyFunnel from "./pages/ApplyFunnel";
 import WebsiteIndex from "./pages/WebsiteIndex";
 import WebsitePrivacyPolicy from "./pages/WebsitePrivacyPolicy";
@@ -23,6 +24,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/funnel" element={<ShortFunnel />} />
+            <Route path="/funnel-2" element={<Funnel2 />} />
             <Route path="/apply" element={<ApplyFunnel />} />
             <Route path="/website" element={<WebsiteIndex />} />
             <Route path="/website/privacy-policy" element={<WebsitePrivacyPolicy />} />

@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, ReactNode } from 'react';
 
-export interface ShortFunnelData {
+export interface Funnel2Data {
   industry: string;
   monthlyRevenue: string;
   investmentReady: string;
@@ -15,11 +15,11 @@ export interface ShortFunnelData {
   depositResponse: string;
 }
 
-interface ShortFunnelContextType {
+interface Funnel2ContextType {
   currentQuestion: number;
   setCurrentQuestion: (q: number) => void;
-  surveyData: ShortFunnelData;
-  updateSurveyData: (field: keyof ShortFunnelData, value: string) => void;
+  surveyData: Funnel2Data;
+  updateSurveyData: (field: keyof Funnel2Data, value: string) => void;
   isDisqualified: boolean;
   setIsDisqualified: (val: boolean) => void;
   isCompleted: boolean;
@@ -29,7 +29,7 @@ interface ShortFunnelContextType {
   personalizeText: (text: string) => string;
 }
 
-const defaultData: ShortFunnelData = {
+const defaultData: Funnel2Data = {
   industry: '',
   monthlyRevenue: '',
   investmentReady: '',
@@ -44,16 +44,16 @@ const defaultData: ShortFunnelData = {
   depositResponse: '',
 };
 
-const ShortFunnelContext = createContext<ShortFunnelContextType | undefined>(undefined);
+const Funnel2Context = createContext<Funnel2ContextType | undefined>(undefined);
 
-export function ShortFunnelProvider({ children }: { children: ReactNode }) {
+export function Funnel2Provider({ children }: { children: ReactNode }) {
   const [currentQuestion, setCurrentQuestion] = useState(1);
-  const [surveyData, setSurveyData] = useState<ShortFunnelData>(defaultData);
+  const [surveyData, setSurveyData] = useState<Funnel2Data>(defaultData);
   const [isDisqualified, setIsDisqualified] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
   const [showSurvey, setShowSurvey] = useState(false);
 
-  const updateSurveyData = (field: keyof ShortFunnelData, value: string) => {
+  const updateSurveyData = (field: keyof Funnel2Data, value: string) => {
     setSurveyData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -62,7 +62,7 @@ export function ShortFunnelProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <ShortFunnelContext.Provider
+    <Funnel2Context.Provider
       value={{
         currentQuestion,
         setCurrentQuestion,
@@ -78,14 +78,14 @@ export function ShortFunnelProvider({ children }: { children: ReactNode }) {
       }}
     >
       {children}
-    </ShortFunnelContext.Provider>
+    </Funnel2Context.Provider>
   );
 }
 
-export function useShortFunnel() {
-  const context = useContext(ShortFunnelContext);
+export function useFunnel2() {
+  const context = useContext(Funnel2Context);
   if (context === undefined) {
-    throw new Error('useShortFunnel must be used within a ShortFunnelProvider');
+    throw new Error('useFunnel2 must be used within a Funnel2Provider');
   }
   return context;
 }

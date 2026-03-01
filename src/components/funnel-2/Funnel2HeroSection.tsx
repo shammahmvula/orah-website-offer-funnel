@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';
-import { useShortFunnel } from '@/contexts/ShortFunnelContext';
+import { useFunnel2 } from '@/contexts/Funnel2Context';
 
 const valueStack = [
   "Mobile-optimized for every device",
@@ -9,8 +9,8 @@ const valueStack = [
   "Flexible payment options available",
 ];
 
-export function ShortHeroSection() {
-  const { setShowSurvey } = useShortFunnel();
+export function Funnel2HeroSection() {
+  const { setShowSurvey } = useFunnel2();
   const [isLoading, setIsLoading] = useState(false);
 
   const handleCTA = () => {
