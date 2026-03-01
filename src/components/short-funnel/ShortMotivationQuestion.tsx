@@ -11,7 +11,7 @@ const examples = [
 ];
 
 export function ShortMotivationQuestion() {
-  const { surveyData, updateSurveyData, setCurrentQuestion } = useShortFunnel();
+  const { surveyData, updateSurveyData, setCurrentQuestion, personalizeText } = useShortFunnel();
   const [charCount, setCharCount] = useState(surveyData.motivation.length);
   const maxChars = 200;
 
