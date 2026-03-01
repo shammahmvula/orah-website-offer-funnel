@@ -131,7 +131,7 @@ Deno.serve(async (req) => {
         Authorization: `Bearer ${resendKey}`,
       },
       body: JSON.stringify({
-        from: "Orah Leads <leads@getorah.co.za>",
+        from: "Orah Notifications <notifications@getorah.co.za>",
         to: [notificationEmail],
         subject,
         html: htmlBody,
