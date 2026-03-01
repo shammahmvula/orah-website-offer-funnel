@@ -39,7 +39,7 @@ export function ShortContactQuestion() {
   };
 
   return (
-    <QuestionCard question="🎉 Great news! Based on your answers, you're a strong candidate for our R5,000 offer.">
+    <QuestionCard question="🎉 Great news! Based on your answers, you're a strong candidate for our limited offer.">
       {/* Google Reviews Offer */}
       <div className="bg-accent/10 border border-accent/30 rounded-xl p-4 mb-6">
         <p className="text-foreground font-semibold mb-2">⭐ BONUS OFFER</p>
@@ -96,7 +96,7 @@ export function ShortContactQuestion() {
         <label className={`flex items-start gap-3 p-4 rounded-xl border ${errors.agreed ? 'border-destructive' : 'border-border'} cursor-pointer`}>
           <Checkbox checked={agreed} onCheckedChange={(checked) => setAgreed(checked as boolean)} className="mt-0.5 data-[state=checked]:bg-accent data-[state=checked]:border-accent" />
           <span className="text-sm text-foreground">
-            I understand this is for a limited R5,000 offer and I'm ready to secure my spot with a 50% deposit once approved.
+            I understand this is for a limited offer and I'm ready to secure my spot with a 10% deposit once approved.
           </span>
         </label>
         {errors.agreed && <p className="text-destructive text-sm">{errors.agreed}</p>}
