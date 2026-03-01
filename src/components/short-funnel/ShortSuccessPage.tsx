@@ -116,19 +116,21 @@ ${emailBody}`;
           <div className="card-premium">
             <div className="flex items-center gap-2 mb-1">
               <CalendarIcon className="w-5 h-5 text-accent" />
-              <h2 className="font-semibold text-foreground text-lg">Step 1: Pick a date for your design consultation</h2>
+              <h2 className="font-semibold text-foreground text-lg">Step 1: Pick a date for your final sales call</h2>
             </div>
-            <p className="text-sm text-muted-foreground mb-4">We'll walk through your custom mockup and discuss next steps.</p>
+            <p className="text-sm text-muted-foreground mb-4">We'll present your custom mockup, finalize the build details, and walk you through flexible payment options.</p>
 
-            <Calendar
-              mode="single"
-              selected={selectedDate}
-              onSelect={(date) => { setSelectedDate(date); setSelectedTime(''); }}
-              disabled={disabledDays}
-              className="rounded-xl border border-border pointer-events-auto mx-auto"
-              fromDate={today}
-              toDate={maxDate}
-            />
+            <div className="flex justify-center">
+              <Calendar
+                mode="single"
+                selected={selectedDate}
+                onSelect={(date) => { setSelectedDate(date); setSelectedTime(''); }}
+                disabled={disabledDays}
+                className="rounded-xl border border-border pointer-events-auto [&_.rdp-day:not([disabled])]:font-bold [&_.rdp-day:not([disabled])]:text-foreground"
+                fromDate={today}
+                toDate={maxDate}
+              />
+            </div>
 
             {selectedDate && (
               <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mt-4">
