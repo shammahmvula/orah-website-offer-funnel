@@ -11,7 +11,7 @@ const examples = [
 ];
 
 export function ShortMotivationQuestion() {
-  const { surveyData, updateSurveyData, setCurrentQuestion } = useShortFunnel();
+  const { surveyData, updateSurveyData, setCurrentQuestion, personalizeText } = useShortFunnel();
   const [charCount, setCharCount] = useState(surveyData.motivation.length);
   const maxChars = 200;
 
@@ -23,7 +23,7 @@ export function ShortMotivationQuestion() {
   };
 
   return (
-    <QuestionCard question="In one sentence, why do you want a new website?">
+    <QuestionCard question={personalizeText("In one sentence, why do you want a new website for your {industry} business?")}>
       <Textarea
         value={surveyData.motivation}
         onChange={(e) => handleChange(e.target.value)}
@@ -50,7 +50,7 @@ export function ShortMotivationQuestion() {
         <Button
           onClick={() => {
             if (surveyData.motivation.trim().length > 0) {
-              setCurrentQuestion(4);
+              setCurrentQuestion(5);
             }
           }}
           disabled={!surveyData.motivation.trim()}

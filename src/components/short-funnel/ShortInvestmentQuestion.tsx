@@ -25,7 +25,7 @@ export function ShortInvestmentQuestion() {
         setShowToast(true);
         setTimeout(() => setShowToast(false), 3000);
       }
-      setTimeout(() => setCurrentQuestion(3), 300);
+      setTimeout(() => setCurrentQuestion(4), 300);
     }
   };
 
