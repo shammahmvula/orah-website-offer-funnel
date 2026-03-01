@@ -692,16 +692,16 @@ const QuizModal = ({ isOpen }: QuizModalProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-background flex flex-col animate-fade-in overflow-hidden">
-      <div className="flex items-center justify-between p-4 md:p-6 border-b border-border/30">
+    <div className="fixed inset-0 z-50 bg-white flex flex-col animate-fade-in overflow-hidden">
+      <div className="flex items-center justify-between p-4 md:p-6 border-b border-gray-200">
         <div className="flex items-center gap-3">
           <img src={orahLogo} alt="ORAH" className="w-8 h-8 md:w-10 md:h-10" />
-          <span className="text-foreground font-bold text-lg tracking-wide">ORAH</span>
+          <span className="text-gray-900 font-bold text-lg tracking-wide">ORAH</span>
         </div>
-        <span className="text-sm text-muted-foreground">Step {currentSlideIndex + 1} of {totalSlides}</span>
+        <span className="text-sm text-gray-500">Step {currentSlideIndex + 1} of {totalSlides}</span>
       </div>
 
-      <div className="h-1 w-full bg-muted">
+      <div className="h-1 w-full bg-gray-100">
         <div
           className="h-full progress-gradient transition-all duration-500 ease-out"
           style={{ width: `${progress}%` }}
@@ -709,7 +709,7 @@ const QuizModal = ({ isOpen }: QuizModalProps) => {
       </div>
 
       <div className="flex-1 flex items-center justify-center p-6 md:p-10 overflow-y-auto">
-        <div className="w-full max-w-lg">{renderSlideContent()}</div>
+        <div className="w-full max-w-lg quiz-light-theme">{renderSlideContent()}</div>
       </div>
     </div>
   );
