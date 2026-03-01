@@ -3,6 +3,7 @@ import { Sparkles, CheckCircle2, Lightbulb } from "lucide-react";
 import confetti from "canvas-confetti";
 import orahLogo from "@/assets/orah-logo.png";
 import TypingEffect from "./TypingEffect";
+import { supabase } from "@/integrations/supabase/client";
 
 interface QuizModalProps {
   isOpen: boolean;
