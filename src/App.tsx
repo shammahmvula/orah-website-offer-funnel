@@ -10,6 +10,8 @@ import Funnel2 from "./pages/Funnel2";
 import ApplyFunnel from "./pages/ApplyFunnel";
 import WebsiteIndex from "./pages/WebsiteIndex";
 import WebsitePrivacyPolicy from "./pages/WebsitePrivacyPolicy";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
             <Route path="/apply" element={<ApplyFunnel />} />
             <Route path="/website" element={<WebsiteIndex />} />
             <Route path="/website/privacy-policy" element={<WebsitePrivacyPolicy />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin" element={<AdminDashboard />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
