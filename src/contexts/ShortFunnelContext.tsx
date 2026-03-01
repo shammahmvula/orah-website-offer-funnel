@@ -26,6 +26,7 @@ interface ShortFunnelContextType {
   setIsCompleted: (val: boolean) => void;
   showSurvey: boolean;
   setShowSurvey: (val: boolean) => void;
+  personalizeText: (text: string) => string;
 }
 
 const defaultData: ShortFunnelData = {
