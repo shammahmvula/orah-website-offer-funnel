@@ -118,8 +118,7 @@ ${emailBody}`;
               <CalendarIcon className="w-5 h-5 text-accent" />
               <h2 className="font-semibold text-foreground text-lg">Step 1: Pick a date for your final sales call</h2>
             </div>
-            <p className="text-sm text-muted-foreground mb-2">We'll present your custom mockup, finalize the build details, and walk you through flexible payment options.</p>
-            <p className="text-sm text-accent font-medium mb-4">🎨 In the meantime, our designer is already reviewing your application and will begin crafting a custom mockup tailored to your business.</p>
+            <p className="text-sm text-muted-foreground mb-4">We'll present your custom mockup, finalize the build details, and walk you through flexible payment options.</p>
 
             <div className="flex justify-center">
               <Calendar
@@ -166,7 +165,8 @@ ${emailBody}`;
               <Mail className="w-5 h-5 text-accent" />
               <h2 className="font-semibold text-foreground text-lg">Step 2: Send us your booking request</h2>
             </div>
-            <p className="text-sm text-muted-foreground mb-4">Copy the email below and send it to confirm your consultation.</p>
+            <p className="text-sm text-muted-foreground mb-3">Copy the email below and send it to confirm your consultation.</p>
+            <p className="text-sm text-accent font-medium mb-4">📲 Once we receive your request, our designer will reach out via WhatsApp to discuss your vision and the vibe you want for your website — so keep an eye out!</p>
 
             <div className="relative bg-muted/50 rounded-xl p-4">
               <button onClick={handleCopy} className="absolute top-3 right-3 flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors">
