@@ -10,6 +10,8 @@ import Funnel2 from "./pages/Funnel2";
 import ApplyFunnel from "./pages/ApplyFunnel";
 import WebsiteIndex from "./pages/WebsiteIndex";
 import WebsitePrivacyPolicy from "./pages/WebsitePrivacyPolicy";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
