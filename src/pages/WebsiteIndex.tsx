@@ -38,8 +38,8 @@ const WebsiteIndex = () => {
           </h1>
 
           <p
-            className="text-primary-foreground/70 text-base md:text-lg leading-relaxed max-w-xl mb-10 animate-fade-up"
-            style={{ animationDelay: "0.3s" }}
+            className="text-primary-foreground/60 text-base md:text-lg leading-relaxed max-w-xl mb-10 animate-fade-up"
+            style={{ animationDelay: "0.3s", fontFamily: "'Inter', sans-serif" }}
           >
             Every missed call, every lost review, every invisible search result...
             it's all money walking to someone else. We make sure they walk to you instead.
