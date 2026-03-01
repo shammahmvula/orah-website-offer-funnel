@@ -1,0 +1,51 @@
+import { useState } from 'react';
+import { QuestionCard } from '../survey/QuestionCard';
+import { AnswerOption } from '../survey/AnswerOption';
+import { Toast } from '../survey/Toast';
+import { useFunnel2 } from '@/contexts/Funnel2Context';
+
+const options = [
+  { label: "✅ Yes, I'm ready to invest in my business", toast: "Perfect! You're exactly who we love working with." },
+  { label: "❌ No, I'm just a tyre kicker, not willing to invest in my own business", toast: null },
+];
+
+export function Funnel2InvestmentQuestion() {
+  const { updateSurveyData, setCurrentQuestion, setIsDisqualified } = useFunnel2();
+  const [toastMessage, setToastMessage] = useState('');
+  const [showToast, setShowToast] = useState(false);
+
+  const handleSelect = (option: typeof options[0]) => {
+    updateSurveyData('investmentReady', option.label);
+
+    if (option.label.includes("tyre kicker")) {
+      setIsDisqualified(true);
+    } else {
+      if (option.toast) {
+        setToastMessage(option.toast);
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 3000);
+      }
+      setTimeout(() => setCurrentQuestion(4), 300);
+    }
+  };
+
+  return (
+    <>
+      <QuestionCard
+        question="If you qualify, are you ready to invest in getting your bespoke website built?"
+        preText="Real talk: We only work with business owners who are serious about investing in their online presence. A quality bespoke website normally costs R20,000+. We're offering 50 spots at a 75% discount."
+      >
+        <div className="space-y-3">
+          {options.map((option) => (
+            <AnswerOption
+              key={option.label}
+              label={option.label}
+              onClick={() => handleSelect(option)}
+            />
+          ))}
+        </div>
+      </QuestionCard>
+      <Toast message={toastMessage} visible={showToast} />
+    </>
+  );
+}
