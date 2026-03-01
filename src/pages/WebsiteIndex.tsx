@@ -23,23 +23,23 @@ const WebsiteIndex = () => {
         {/* Content */}
         <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-3xl">
           <p
-            className="text-primary-foreground/70 text-lg md:text-xl tracking-wide mb-3 animate-fade-up"
-            style={{ animationDelay: "0.1s" }}
+            className="text-primary-foreground/60 text-lg md:text-xl tracking-wide mb-3 animate-fade-up"
+            style={{ animationDelay: "0.1s", fontFamily: "'Inter', sans-serif" }}
           >
             While You Read This,
           </p>
 
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-black text-primary-foreground leading-tight mb-8 animate-fade-up"
-            style={{ animationDelay: "0.2s" }}
+            className="text-4xl sm:text-5xl md:text-6xl font-black text-primary-foreground leading-[1.1] mb-8 animate-fade-up tracking-tight"
+            style={{ animationDelay: "0.2s", fontFamily: "'Inter', sans-serif" }}
           >
             Your Competitor Just<br />
-            Got <span className="font-display italic text-cosmic-purple">Another</span> Customer.
+            Got <span className="italic text-cosmic-purple" style={{ fontFamily: "'Inter', sans-serif" }}>Another</span> Customer.
           </h1>
 
           <p
-            className="text-primary-foreground/70 text-base md:text-lg leading-relaxed max-w-xl mb-10 animate-fade-up"
-            style={{ animationDelay: "0.3s" }}
+            className="text-primary-foreground/60 text-base md:text-lg leading-relaxed max-w-xl mb-10 animate-fade-up"
+            style={{ animationDelay: "0.3s", fontFamily: "'Inter', sans-serif" }}
           >
             Every missed call, every lost review, every invisible search result...
             it's all money walking to someone else. We make sure they walk to you instead.
