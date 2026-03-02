@@ -25,11 +25,14 @@ export function ClickFunnelLayout({ children }: ClickFunnelLayoutProps) {
 
         {/* Headline */}
         <div className="text-center px-4 pb-4">
-          <h1 className="font-serif text-2xl md:text-4xl text-primary-foreground font-bold leading-tight">
-            Your Dream Website Is Closer Than You Think
+          <h1 className="font-serif text-2xl md:text-4xl text-primary-foreground font-bold leading-tight max-w-2xl mx-auto">
+            Every Day Your Website Looks Like It Was Made In 2012, You're Losing Money
           </h1>
-          <p className="text-primary-foreground/80 mt-2 text-sm md:text-base max-w-xl mx-auto">
-            Answer a few quick questions and see if you qualify for a bespoke website at a fraction of the cost.
+          <p className="text-primary-foreground/80 mt-3 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            Your website can be your best salesperson, or your worst enemy. That's why businesses with worse service than yours are getting all the customers... because your work is 5 stars but your website is 2 stars. That's the problem.
+          </p>
+          <p className="text-primary-foreground/90 mt-3 text-sm md:text-base max-w-xl mx-auto font-medium">
+            Answer a few quick questions and see if you qualify for a free web design mockup for your business from us. Your dream website is closer than you think!
           </p>
         </div>
 
