@@ -1,5 +1,5 @@
 import { useClickFunnel } from '@/contexts/ClickFunnelContext';
-import { QuestionCard } from '../survey/QuestionCard';
+import { ClickFunnelQuestionCard } from './ClickFunnelQuestionCard';
 import { AnswerOption } from '../survey/AnswerOption';
 
 const options = [
@@ -19,10 +19,10 @@ export function Q3MotivationQuestion() {
   };
 
   return (
-    <QuestionCard question="What's the #1 reason you want a new website?">
-      <p className="text-muted-foreground mb-6 text-sm">
-        Pick the one that hits closest to home.
-      </p>
+    <ClickFunnelQuestionCard
+      question="What's the #1 reason you want a new website?"
+      subtitle="Pick the one that hits closest to home."
+    >
       <div className="space-y-3">
         {options.map(option => (
           <AnswerOption
@@ -33,6 +33,6 @@ export function Q3MotivationQuestion() {
           />
         ))}
       </div>
-    </QuestionCard>
+    </ClickFunnelQuestionCard>
   );
 }
