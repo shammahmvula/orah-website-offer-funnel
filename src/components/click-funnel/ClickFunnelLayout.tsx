@@ -32,7 +32,7 @@ export function ClickFunnelLayout({ children }: ClickFunnelLayoutProps) {
             Your website can be your best salesperson, or your worst enemy. That's why businesses with worse service than yours are getting all the customers... because your work is 5 stars but your website is 2 stars. That's the problem.
           </p>
           <p className="text-primary-foreground/90 mt-3 text-sm md:text-base max-w-xl mx-auto font-medium">
-            Answer a few quick questions and see if you qualify for a free web design mockup for your business from us. Your dream website is closer than you think!
+            Answer a few quick questions and see if you qualify for a <span className="relative inline-block"><span className="relative z-10">free web design mockup</span><span className="absolute bottom-0 left-0 w-full h-[6px] bg-destructive/80 rounded-sm -mb-0.5" /></span> for your business from us. Your dream website is closer than you think!
           </p>
         </div>
 
