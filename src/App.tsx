@@ -34,6 +34,7 @@ const App = () => (
             <Route path="/website/privacy-policy" element={<WebsitePrivacyPolicy />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/quiz" element={<ClickFunnel />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
