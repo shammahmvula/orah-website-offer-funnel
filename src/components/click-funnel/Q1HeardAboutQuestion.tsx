@@ -1,5 +1,5 @@
 import { useClickFunnel } from '@/contexts/ClickFunnelContext';
-import { QuestionCard } from '../survey/QuestionCard';
+import { ClickFunnelQuestionCard } from './ClickFunnelQuestionCard';
 import { AnswerOption } from '../survey/AnswerOption';
 
 const options = [
@@ -19,10 +19,10 @@ export function Q1HeardAboutQuestion() {
   };
 
   return (
-    <QuestionCard question="How did you find us?">
-      <p className="text-muted-foreground mb-6 text-sm">
-        We'd love to know what brought you here.
-      </p>
+    <ClickFunnelQuestionCard
+      question="How did you find us?"
+      subtitle="We'd love to know what brought you here."
+    >
       <div className="space-y-3">
         {options.map(option => (
           <AnswerOption
@@ -33,6 +33,6 @@ export function Q1HeardAboutQuestion() {
           />
         ))}
       </div>
-    </QuestionCard>
+    </ClickFunnelQuestionCard>
   );
 }

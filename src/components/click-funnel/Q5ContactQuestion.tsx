@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { QuestionCard } from '../survey/QuestionCard';
 import { useClickFunnel } from '@/contexts/ClickFunnelContext';
+import { ClickFunnelQuestionCard } from './ClickFunnelQuestionCard';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
@@ -44,6 +44,7 @@ export function Q5ContactQuestion() {
         (window as any).fbq('track', 'Lead');
       }
 
+      localStorage.setItem('click_funnel_submitted', 'true');
       setIsCompleted(true);
     } catch {
       setSubmitting(false);
@@ -51,11 +52,10 @@ export function Q5ContactQuestion() {
   };
 
   return (
-    <QuestionCard question="You're almost there! Where can we reach you?">
-      <p className="text-muted-foreground mb-6 text-sm">
-        Drop your details below and one of our designers will be in touch shortly.
-      </p>
-
+    <ClickFunnelQuestionCard
+      question="You're almost there! Where can we reach you?"
+      subtitle="Drop your details below and one of our designers will be in touch shortly."
+    >
       <div className="space-y-4">
         <div>
           <Label className="text-foreground">First Name <span className="text-destructive">*</span></Label>
@@ -93,9 +93,9 @@ export function Q5ContactQuestion() {
         </div>
 
         <Button onClick={handleSubmit} disabled={submitting} className="btn-primary mt-4 w-full">
-          {submitting ? 'SUBMITTING...' : 'GET MY FREE QUOTE →'}
+          {submitting ? 'SUBMITTING...' : 'GET MY FREE QUOTE'}
         </Button>
       </div>
-    </QuestionCard>
+    </ClickFunnelQuestionCard>
   );
 }

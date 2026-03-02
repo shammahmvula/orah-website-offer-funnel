@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import { useClickFunnel } from '@/contexts/ClickFunnelContext';
 import { ProgressBar } from '../survey/ProgressBar';
+import { ClickFunnelLayout } from './ClickFunnelLayout';
 import { Q1HeardAboutQuestion } from './Q1HeardAboutQuestion';
 import { Q2SeriousnessQuestion } from './Q2SeriousnessQuestion';
 import { Q3MotivationQuestion } from './Q3MotivationQuestion';
@@ -29,11 +30,15 @@ export function ClickFunnelSurvey() {
   };
 
   return (
-    <div className="min-h-screen bg-background pt-11">
-      <ProgressBar currentQuestion={currentQuestion} totalQuestions={TOTAL_QUESTIONS} />
-      <AnimatePresence mode="wait">
-        {renderQuestion()}
-      </AnimatePresence>
-    </div>
+    <ClickFunnelLayout>
+      <div className="w-full max-w-lg mx-auto">
+        <div className="mb-4">
+          <ProgressBar currentQuestion={currentQuestion} totalQuestions={TOTAL_QUESTIONS} />
+        </div>
+        <AnimatePresence mode="wait">
+          {renderQuestion()}
+        </AnimatePresence>
+      </div>
+    </ClickFunnelLayout>
   );
 }
