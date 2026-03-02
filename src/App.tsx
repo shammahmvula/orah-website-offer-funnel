@@ -12,6 +12,7 @@ import WebsiteIndex from "./pages/WebsiteIndex";
 import WebsitePrivacyPolicy from "./pages/WebsitePrivacyPolicy";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import ClickFunnel from "./pages/ClickFunnel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/website/privacy-policy" element={<WebsitePrivacyPolicy />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/quiz" element={<ClickFunnel />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
