@@ -12,6 +12,7 @@ import WebsiteIndex from "./pages/WebsiteIndex";
 import WebsitePrivacyPolicy from "./pages/WebsitePrivacyPolicy";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import ClickFunnel from "./pages/ClickFunnel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
