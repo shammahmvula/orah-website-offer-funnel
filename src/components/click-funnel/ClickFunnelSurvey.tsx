@@ -1,6 +1,5 @@
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useClickFunnel } from '@/contexts/ClickFunnelContext';
-import { ProgressBar } from '../survey/ProgressBar';
 import { ClickFunnelLayout } from './ClickFunnelLayout';
 import { Q1HeardAboutQuestion } from './Q1HeardAboutQuestion';
 import { Q2SeriousnessQuestion } from './Q2SeriousnessQuestion';
