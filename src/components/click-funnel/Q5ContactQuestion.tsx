@@ -38,6 +38,9 @@ export function Q5ContactQuestion() {
         utm_campaign: data.utmCampaign || null,
         utm_content: data.utmContent || null,
         utm_term: data.utmTerm || null,
+        campaign_id: data.campaignId || null,
+        ad_id: data.adId || null,
+        placement: data.placement || null,
       });
 
       if (typeof window !== 'undefined' && (window as any).fbq) {
