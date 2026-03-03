@@ -15,6 +15,9 @@ export interface ClickFunnelData {
   utmCampaign: string;
   utmContent: string;
   utmTerm: string;
+  campaignId: string;
+  adId: string;
+  placement: string;
 }
 
 const defaultData: ClickFunnelData = {
@@ -30,6 +33,9 @@ const defaultData: ClickFunnelData = {
   utmCampaign: '',
   utmContent: '',
   utmTerm: '',
+  campaignId: '',
+  adId: '',
+  placement: '',
 };
 
 interface ClickFunnelContextType {
@@ -60,6 +66,9 @@ export function ClickFunnelProvider({ children }: { children: ReactNode }) {
       utmCampaign: searchParams.get('utm_campaign') || '',
       utmContent: searchParams.get('utm_content') || '',
       utmTerm: searchParams.get('utm_term') || '',
+      campaignId: searchParams.get('campaign_id') || '',
+      adId: searchParams.get('ad_id') || '',
+      placement: searchParams.get('placement') || '',
     }));
   }, [searchParams]);
 
