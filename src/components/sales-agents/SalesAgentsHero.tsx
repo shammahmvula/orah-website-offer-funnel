@@ -58,13 +58,13 @@ const SalesAgentsHero = ({ onScrollToCTA }: SalesAgentsHeroProps) => {
               onClick={onScrollToCTA}
               className="px-6 py-3 bg-[hsl(82,85%,55%)] text-[hsl(240,25%,4%)] font-semibold text-sm rounded-lg hover:brightness-110 transition-all"
             >
-              Start Free Trial
+              Book Demo
             </button>
             <button
               onClick={onScrollToCTA}
               className="px-6 py-3 border border-primary-foreground/20 text-primary-foreground font-medium text-sm rounded-lg hover:bg-primary-foreground/5 transition-all flex items-center gap-2"
             >
-              Book Demo <span className="text-xs">↗</span>
+              Hear The AI <span className="text-xs">↗</span>
             </button>
           </motion.div>
         </div>
