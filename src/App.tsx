@@ -13,6 +13,7 @@ import WebsitePrivacyPolicy from "./pages/WebsitePrivacyPolicy";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import ClickFunnel from "./pages/ClickFunnel";
+import SalesAgents from "./pages/SalesAgents";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

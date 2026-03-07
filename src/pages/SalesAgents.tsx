@@ -162,9 +162,9 @@ const SalesAgents = () => {
         <div className="max-w-2xl mx-auto">
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-sm">
             <div className="flex items-center gap-2 mb-6">
-              <div className="w-3 h-3 rounded-full bg-red-500" />
-              <div className="w-3 h-3 rounded-full bg-yellow-500" />
-              <div className="w-3 h-3 rounded-full bg-green-500" />
+              <div className="w-3 h-3 rounded-full bg-destructive" />
+              <div className="w-3 h-3 rounded-full bg-accent" />
+              <div className="w-3 h-3 rounded-full bg-success" />
               <span className="ml-3 text-primary-foreground/30 text-xs font-mono">ai-agent.log</span>
             </div>
             <TypingEffect
