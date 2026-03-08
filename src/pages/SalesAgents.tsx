@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import StarBackground from "@/components/website/StarBackground";
 import orahLogo from "@/assets/orah-logo.png";
 import { Link } from "react-router-dom";
@@ -10,13 +10,13 @@ import SalesAgentsTestimonials from "@/components/sales-agents/SalesAgentsTestim
 import SalesAgentsPricing from "@/components/sales-agents/SalesAgentsPricing";
 import SalesAgentsFAQ from "@/components/sales-agents/SalesAgentsFAQ";
 import SalesAgentsCTA from "@/components/sales-agents/SalesAgentsCTA";
+import SalesAgentsBookingModal from "@/components/sales-agents/SalesAgentsBookingModal";
 
 const SalesAgents = () => {
   const ctaRef = useRef<HTMLDivElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const scrollToCTA = () => {
-    ctaRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+  const openModal = () => setIsModalOpen(true);
 
   return (
     <main className="relative min-h-screen w-full text-primary-foreground">
@@ -29,21 +29,23 @@ const SalesAgents = () => {
           <span className="font-bold text-lg tracking-wide text-primary-foreground">ORAH</span>
         </div>
         <button
-          onClick={scrollToCTA}
+          onClick={openModal}
           className="px-5 py-2 bg-[hsl(82,85%,55%)] text-[hsl(240,25%,4%)] text-sm font-semibold rounded-lg hover:brightness-110 transition-all"
         >
           Get Started
         </button>
       </nav>
 
-      <SalesAgentsHero onScrollToCTA={scrollToCTA} />
+      <SalesAgentsHero onScrollToCTA={openModal} />
       <SalesAgentsTypingPitch />
       <SalesAgentsPlatform />
       <SalesAgentsProcess />
       <SalesAgentsTestimonials />
-      <SalesAgentsPricing onScrollToCTA={scrollToCTA} />
+      <SalesAgentsPricing onScrollToCTA={openModal} />
       <SalesAgentsFAQ />
-      <SalesAgentsCTA ref={ctaRef} />
+      <SalesAgentsCTA ref={ctaRef} onBookDemo={openModal} />
+
+      <SalesAgentsBookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Footer */}
       <footer className="relative z-10 text-center py-8 text-primary-foreground/25 text-xs border-t border-primary-foreground/5">
