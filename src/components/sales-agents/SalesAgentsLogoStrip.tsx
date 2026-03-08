@@ -13,12 +13,12 @@ const logos = [
 
 const SalesAgentsLogoStrip = () => {
   return (
-    <section className="relative z-10 py-10">
+    <section className="relative z-10 -mt-8 pb-12">
       <div className="max-w-5xl mx-auto px-6">
         <p className="text-center text-primary-foreground/30 text-xs tracking-[0.2em] uppercase mb-8">
           Powered by industry-leading tools
         </p>
-        <div className="flex items-center justify-center gap-10 sm:gap-16 flex-wrap">
+        <div className="flex items-center justify-center gap-12 sm:gap-20 flex-wrap">
           {logos.map((logo, i) => (
             <motion.img
               key={logo.alt}
@@ -28,7 +28,7 @@ const SalesAgentsLogoStrip = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="h-8 sm:h-10 w-auto object-contain brightness-0 invert opacity-50 hover:opacity-80 transition-opacity"
+              className="h-12 sm:h-14 w-auto object-contain brightness-0 invert opacity-50 hover:opacity-80 transition-opacity"
             />
           ))}
         </div>
