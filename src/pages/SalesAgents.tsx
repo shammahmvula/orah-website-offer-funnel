@@ -4,6 +4,7 @@ import orahLogo from "@/assets/orah-logo.png";
 import { Link } from "react-router-dom";
 import SalesAgentsHero from "@/components/sales-agents/SalesAgentsHero";
 import SalesAgentsTypingPitch from "@/components/sales-agents/SalesAgentsTypingPitch";
+import SalesAgentsLogoStrip from "@/components/sales-agents/SalesAgentsLogoStrip";
 import SalesAgentsPlatform from "@/components/sales-agents/SalesAgentsPlatform";
 import SalesAgentsProcess from "@/components/sales-agents/SalesAgentsProcess";
 import SalesAgentsTestimonials from "@/components/sales-agents/SalesAgentsTestimonials";
@@ -37,6 +38,7 @@ const SalesAgents = () => {
       </nav>
 
       <SalesAgentsHero onScrollToCTA={openModal} />
+      <SalesAgentsLogoStrip />
       <SalesAgentsTypingPitch />
       <SalesAgentsPlatform />
       <SalesAgentsProcess />
