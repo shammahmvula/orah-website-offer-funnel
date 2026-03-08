@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import trustedLogos from "@/assets/trusted-logos.png";
 
 interface SalesAgentsHeroProps {
   onScrollToCTA: () => void;
@@ -137,22 +136,6 @@ const SalesAgentsHero = ({ onScrollToCTA }: SalesAgentsHeroProps) => {
           </div>
         </motion.div>
       </div>
-      {/* Trusted logos */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
-        className="max-w-4xl mx-auto mt-20 px-6"
-      >
-        <p className="text-primary-foreground/25 text-[10px] tracking-[0.2em] uppercase text-center mb-6">
-          Deployed across leading teams
-        </p>
-        <img
-          src={trustedLogos}
-          alt="Trusted by AnimeTattoos, Warrior Pipeline, AgencyLab, EasyGrow, GymLaunch, Impression"
-          className="w-full max-w-3xl mx-auto opacity-50 hover:opacity-70 transition-opacity"
-        />
-      </motion.div>
     </section>
   );
 };
