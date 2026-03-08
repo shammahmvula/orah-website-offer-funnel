@@ -63,7 +63,7 @@ const SalesAgentsFAQ = () => {
               value={`faq-${i}`}
               className="border border-primary-foreground/8 rounded-xl px-5 bg-primary-foreground/[0.02] data-[state=open]:border-[hsl(82,85%,55%)]/20"
             >
-              <AccordionTrigger className="text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground py-4 hover:no-underline">
+              <AccordionTrigger className="text-sm font-sans font-medium text-primary-foreground/80 hover:text-primary-foreground py-4 hover:no-underline">
                 {faq.q}
               </AccordionTrigger>
               <AccordionContent className="text-primary-foreground/45 text-sm leading-relaxed pb-4">
