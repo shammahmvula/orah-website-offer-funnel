@@ -1,7 +1,11 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
 
-const SalesAgentsCTA = forwardRef<HTMLDivElement>((_, ref) => {
+interface SalesAgentsCTAProps {
+  onBookDemo: () => void;
+}
+
+const SalesAgentsCTA = forwardRef<HTMLDivElement, SalesAgentsCTAProps>(({ onBookDemo }, ref) => {
   return (
     <section className="relative z-10 py-32 px-6">
       {/* Bold closing statement */}
@@ -32,14 +36,12 @@ const SalesAgentsCTA = forwardRef<HTMLDivElement>((_, ref) => {
           <p className="text-primary-foreground/50 mb-8 max-w-md mx-auto text-sm leading-relaxed">
             Book a free 15-minute demo and see your AI sales agent in action — built for your business, your market, your team.
           </p>
-          <a
-            href="https://calendly.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            onClick={onBookDemo}
             className="inline-block px-10 py-4 bg-[hsl(82,85%,55%)] text-[hsl(240,25%,4%)] font-bold text-base rounded-lg hover:brightness-110 transition-all"
           >
             Book Your Free Demo →
-          </a>
+          </button>
           <p className="text-primary-foreground/25 text-xs mt-4">No commitment. No card required.</p>
         </motion.div>
       </div>
