@@ -28,7 +28,7 @@ const SalesAgentsLogoStrip = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="h-12 sm:h-14 w-auto object-contain brightness-0 invert opacity-50 hover:opacity-80 transition-opacity"
+              className="h-16 sm:h-20 w-auto object-contain brightness-0 invert opacity-50 hover:opacity-80 transition-opacity"
             />
           ))}
         </div>
