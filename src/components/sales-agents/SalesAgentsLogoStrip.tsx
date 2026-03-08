@@ -13,7 +13,7 @@ const logos = [
 
 const SalesAgentsLogoStrip = () => {
   return (
-    <section className="relative z-10 py-10 border-y border-primary-foreground/5">
+    <section className="relative z-10 py-10">
       <div className="max-w-5xl mx-auto px-6">
         <p className="text-center text-primary-foreground/30 text-xs tracking-[0.2em] uppercase mb-8">
           Powered by industry-leading tools
