@@ -38,6 +38,7 @@ const SalesAgents = () => {
       </nav>
 
       <SalesAgentsHero onScrollToCTA={openModal} />
+      <SalesAgentsLogoStrip />
       <SalesAgentsTypingPitch />
       <SalesAgentsPlatform />
       <SalesAgentsProcess />
